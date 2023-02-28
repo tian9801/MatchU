@@ -14,7 +14,22 @@
         android:theme="@style/Theme.MatchU"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Serch"
+            android:exported="false" />
+        <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar"
+            android:exported="false" />
+        <activity
+            android:name=".Favorites"
+            android:exported="false" />
+        <activity
+            android:name=".Swipe"
+            android:exported="false" />
+        <activity
+            android:name=".LogIn"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
