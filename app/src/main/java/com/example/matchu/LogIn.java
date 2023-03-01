@@ -38,6 +38,8 @@ public class LogIn extends AppCompatActivity  {
         firebaseHelper = new FirebaseHelper();
         logInB = findViewById(R.id.logIn);
         signUpB = findViewById(R.id.signUp);
+        userNameET = findViewById(R.id.email);
+        passwordET = findViewById(R.id.password);
 
 
     }
