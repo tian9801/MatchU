@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "116401002509",
+    "project_id": "matchu-d56a1",
+    "storage_bucket": "matchu-d56a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116401002509:android:48ca27530c4612cdd71d44",
+        "android_client_info": {
+          "package_name": "com.example.matchu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116401002509-63d00am7fpunggjf3qb15ffv9lmoofgm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHKejw4poL4H73niMKGGSdro8Z8F8I1Pk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116401002509-63d00am7fpunggjf3qb15ffv9lmoofgm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
