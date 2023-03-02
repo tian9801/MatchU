@@ -29,6 +29,9 @@
             android:name=".Swipe"
             android:exported="false" />
         <activity
+            android:name=".Questionare"
+            android:exported="false" />
+        <activity
             android:name=".LogIn"
             android:exported="true">
             <intent-filter>
