@@ -3,12 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_login.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_main.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.1661600810536981" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_serch.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_settings.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_swipe.xml" value="0.17617753623188406" />
+        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
+        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.33" />
+        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.33" />
       </map>
     </option>
   </component>
