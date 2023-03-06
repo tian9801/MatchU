@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#2A2B2A</color>
+<<<<<<< Updated upstream
     <color name="white">#F8F4E3</color>
     <color name="offwhite">#F8F4E3</color>
+=======
+    <color name="offwhite">#F8F4E3</color>
+    <color name="white">#FFFFFF</color>
+>>>>>>> Stashed changes
     <color name="pink">#E5446D</color>
     <color name="wine">#7E0202</color>
     <color name="salmon">#FF8552</color>
