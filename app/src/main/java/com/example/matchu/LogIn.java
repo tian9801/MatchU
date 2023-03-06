@@ -13,6 +13,9 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuthEmailException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class LogIn extends AppCompatActivity  {
 
@@ -43,6 +46,26 @@ public class LogIn extends AppCompatActivity  {
 
 
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        updateUI();
+    }
+
+
+    public void updateUI() {
+        // if the user is already logged in, then they bypass this screen
+        Log.d(TAG, "inside updateUI: " + firebaseHelper.getmAuth().getUid());
+        if (firebaseHelper.getmAuth().getUid() != null) {
+            firebaseHelper.attachReadDataToUser();
+            Intent intent = new Intent(LogIn.this,Questionare.class);
+            startActivity(intent);
+        }
+    }
+
+
 
     /**
      * Method first checks if the input is valid.  If it meets the screening criteria from
@@ -84,10 +107,32 @@ public class LogIn extends AppCompatActivity  {
                                 // updateIfLoggedIn();
                                 // firebaseHelper.attachReadDataToUser();
 
+                                firebaseHelper.addUserToFirestore(userName,
+                                        firebaseHelper.getmAuth().getUid());
+                                firebaseHelper.attachReadDataToUser();
+
                                 Intent intent = new Intent(LogIn.this, Questionare.class);
                                 startActivity(intent);
                             }
                             else {
+                                try {
+                                    throw task.getException();
+                                } catch (FirebaseAuthInvalidCredentialsException e) {
+                                    // poorly formatted email address
+                                    Toast.makeText(LogIn.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Sign up failed for " + userName + " " + password + e.getMessage());
+                                } catch (FirebaseAuthEmailException e) {
+                                    // duplicate email used
+                                    Toast.makeText(LogIn.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Sign up failed for " + userName + " " + password + e.getMessage());
+                                } catch (Exception e) {
+                                    Toast.makeText(LogIn.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Sign up failed for " + userName + " " + password + e.getMessage());
+                                }
+
+
+
+
                                 // if sign up fails, display a message to the user along with the exception from firebase auth
                                 Log.d(TAG, "Sign up failed for " + userName + " " + password +
                                         " because of \n"+ task.getResult());
@@ -118,17 +163,36 @@ public class LogIn extends AppCompatActivity  {
                                 // updateIfLoggedIn();
                                 // firebaseHelper.attachReadDataToUser();
 
+                                firebaseHelper.attachReadDataToUser();
+
                                 Log.d(TAG, userName + " logged in");
 
                                 Intent intent = new Intent(LogIn.this, Questionare.class);
                                 startActivity(intent);
                             }
                             else {
-                                // if log in fails, display a message to the user along with the exception from firebase auth
+
+                                try {
+                                    throw task.getException();
+                                } catch (FirebaseAuthInvalidCredentialsException e) {
+                                    // wrong password
+                                    Toast.makeText(LogIn.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Log in failed for " + userName + " " + password + e.getMessage());
+                                } catch (FirebaseAuthInvalidUserException e) {
+                                    // wrong email, no user found with this email
+                                    Toast.makeText(LogIn.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Log in failed for " + userName + " " + password + e.getMessage());
+                                } catch (Exception e) {
+                                    Toast.makeText(LogIn.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Log in failed for " + userName + " " + password + e.getMessage());
+                                }
+                            }
+
+                            // if log in fails, display a message to the user along with the exception from firebase auth
                                 Log.d(TAG, "Log in failed for " + userName + " " + password +
                                         " because of \n"+ task.toString());
                             }
-                        }
+
                     });
 
 
