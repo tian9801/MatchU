@@ -29,8 +29,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navbar" />
-<<<<<<< HEAD
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
+
 </RelativeLayout>
->>>>>>> parent of 7d434ba... Revert "nav bar"
+
