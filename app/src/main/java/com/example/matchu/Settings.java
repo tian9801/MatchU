@@ -55,4 +55,11 @@ public class Settings extends AppCompatActivity {
         Intent intent = new Intent(Settings.this, Questionare.class);
         startActivity(intent);
     }
+
+    public void logOutClicked(View view) {
+        LogIn.firebaseHelper.logOutUser();
+        Intent intent = new Intent(Settings.this, LogIn.class);
+        startActivity(intent);
+    }
+
 }
