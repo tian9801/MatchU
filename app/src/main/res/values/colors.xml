@@ -6,4 +6,10 @@
     <color name="pink">#E5446D</color>
     <color name="wine">#7E0202</color>
     <color name="salmon">#FF8552</color>
+    <color name="lighterBlack">#353535</color>
+    <color name="darkBlue">#042559</color>
+    <color name="darkGreen">#063008</color>
+    <color name="lightBlue">#7488C3</color>
+    <color name="lightGreen">#5E8860</color>
+
 </resources>
