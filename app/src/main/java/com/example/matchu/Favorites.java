@@ -22,7 +22,7 @@ public class Favorites extends AppCompatActivity {
         nav = findViewById(R.id.bottomNavigationView);
         nav.setSelectedItemId(R.id.favorites);
 
-        nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        nav.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()) {
