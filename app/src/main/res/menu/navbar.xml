@@ -3,22 +3,27 @@
 
     <item android:title="Calender"
         android:icon = "@drawable/calender"
+        android:id="@+id/calender"
 
         />
     <item android:title="Search"
         android:icon = "@drawable/search"
+        android:id="@+id/search"
 
         />
     <item android:title="Favorite"
         android:icon = "@drawable/favorite"
+        android:id="@+id/favorites"
 
         />
     <item android:title="Swipe"
         android:icon = "@drawable/swipe"
+        android:id="@+id/swipe"
 
         />
     <item android:title="Settings"
         android:icon = "@drawable/settings"
+        android:id="@+id/settings"
 
         />
 </menu>

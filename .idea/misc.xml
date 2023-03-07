@@ -3,50 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_calendar.xml" value="0.2056159420289855" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.2056159420289855" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.1" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_serch.xml" value="0.2056159420289855" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_settings.xml" value="0.1" />
-        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_swipe.xml" value="0.2056159420289855" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.33" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.33" />
-=======
-<<<<<<< HEAD
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/drawable/favorite.xml" value="0.1625" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1625" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/font/importedfonts.xml" value="0.30092592592592593" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
-<<<<<<< Updated upstream
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.22" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.33" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_serch.xml" value="0.2554347826086957" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_settings.xml" value="0.1661600810536981" />
-=======
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.33" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.67" />
->>>>>>> Stashed changes
-=======
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/drawable/calender.xml" value="0.2985" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/drawable/favorite.xml" value="0.2985" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/drawable/swipe.xml" value="0.2985" />
-        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_calendar.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_calendar.xml" value="0.10112359550561797" />
+        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.1" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_serch.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_settings.xml" value="0.24954710144927536" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/layout/activity_swipe.xml" value="0.358695652173913" />
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/menu/navbar.xml" value="0.36666666666666664" />
->>>>>>> 580636ae13dbe8caaae64ff61a0e490571c4b7e4
->>>>>>> d064daedb7400d791c3c82f0f597168eca072415
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/drawable/calender.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/drawable/favorite.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/drawable/search.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/drawable/swipe.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_calendar.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_serch.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_settings.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_swipe.xml" value="0.1" />
+        <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/menu/navbar.xml" value="0.1" />
       </map>
     </option>
   </component>
