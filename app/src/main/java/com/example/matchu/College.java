@@ -18,7 +18,7 @@ public class College implements Parcelable {
     }
 
 
-    // A default constructor is required for the Parceable interface to work
+    // A default constructor is required for the Parcelable interface to work
     public College() {
         price = 0;
         collegeName = "No name";

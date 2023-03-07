@@ -13,8 +13,8 @@ public class Questionare extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare);
     }
-    public void stepTwo(View view) {
-        Intent intent = new Intent(Questionare.this, Swipe.class);
+    public void next(View view) {
+        Intent intent = new Intent(Questionare.this, Favorites.class);
         startActivity(intent);
     }
 }
