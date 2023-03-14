@@ -182,6 +182,8 @@ certain things from occurring until after the onSuccess is finished.
     }
 
 
+
+
     //https://stackoverflow.com/questions/48499310/how-to-return-a-documentsnapshot-as-a-result-of-a-method/48500679#48500679
     public interface FirestoreCallback {
         void onCallback(ArrayList<College> myList);

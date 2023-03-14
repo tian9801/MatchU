@@ -17,6 +17,9 @@ public class College implements Parcelable {
         this.docId = docId;
     }
 
+    public College(String collegeName) {
+        this.collegeName = collegeName;
+    }
 
     // A default constructor is required for the Parcelable interface to work
     public College() {
@@ -77,6 +80,9 @@ public class College implements Parcelable {
                     return new College[0];
                 }
             };
+
+
+
 
 
     /**
