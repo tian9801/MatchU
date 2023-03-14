@@ -7,15 +7,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.yalantis.library.Koloda;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Swipe extends AppCompatActivity {
-
+    private SwipeAdapter adapter;
+    private List<College> list;
     BottomNavigationView nav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        list = new ArrayList<>();
+        adapter = new SwipeAdapter(this, list);
         setContentView(R.layout.activity_swipe);
         nav = findViewById(R.id.bottomNavigationView);
         nav.setSelectedItemId(R.id.swipe);
