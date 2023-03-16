@@ -261,22 +261,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
+        android:onClick = 'next'
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-<<<<<<< HEAD
-=======
-=======
         app:layout_constraintVertical_bias="0.976"
-        android:onClick="next"/>
->>>>>>> 14f88cc925bdfcc875e05a0821d432dd5ca20c5c
->>>>>>> parent of 0054117 (onclick)
+        />
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
