@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Swipe">
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b185f42757c3ff29d737b74b12253f2fa6f07ab0
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
