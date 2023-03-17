@@ -4,30 +4,68 @@ import android.os.Parcelable;
 
 public class College implements Parcelable {
     private String collegeName;
-    private String location;
-    private int price;
+    private String aliasName;
+    private String state;
+    private String city;
+    private String photo;
+    private int rank;
+    private int ACT;
+    private int aidPercent;
+    private int acceptance;
+    private int tuition;
+    private double gpa;
+    private int enrollment;
+    private int SAT;
+    private int costAfterAid;
+    private String type;
+    private String academicCalendar;
     private String setting;
-    private String docId;
+    private String docID;
 
-    public College(String collegeName, String location, int price, String setting, String docId) {
+
+    public College(String collegeName, String aliasName, String state, String city, String photo, int rank, int ACT, int aidPercent, int acceptance, int tuition, double gpa, int enrollment, int SAT, int costAfterAid, String type, String academicCalendar, String setting, String docID) {
         this.collegeName = collegeName;
-        this.location = location;
-        this.price = price;
+        this.aliasName = aliasName;
+        this.state = state;
+        this.city = city;
+        this.photo = photo;
+        this.rank = rank;
+        this.ACT = ACT;
+        this.aidPercent = aidPercent;
+        this.acceptance = acceptance;
+        this.tuition = tuition;
+        this.gpa = gpa;
+        this.enrollment = enrollment;
+        this.SAT = SAT;
+        this.costAfterAid = costAfterAid;
+        this.type = type;
+        this.academicCalendar = academicCalendar;
         this.setting = setting;
-        this.docId = docId;
+        this.docID = docID;
     }
 
-    public College(String collegeName) {
-        this.collegeName = collegeName;
-    }
+
 
     // A default constructor is required for the Parcelable interface to work
     public College() {
-        price = 0;
-        collegeName = "No name";
-        location = "No desc";
-        setting = "No setting";
-        docId = "No docID yet";
+       collegeName="No name";
+       aliasName="No alias";
+       state="No state";
+       city= "No city";
+       photo="No photo";
+       rank= 0;
+       ACT = 0;
+       aidPercent = 0;
+       acceptance = 0;
+       tuition = 0;
+       gpa = 0.0;
+       enrollment = 0;
+       SAT = 0;
+       costAfterAid = 0;
+       type = "No type";
+       academicCalendar = "No calendar";
+       setting = "No setting";
+       docID = "No docID";
     }
 
 
@@ -42,11 +80,29 @@ public class College implements Parcelable {
      */
 
     public College(Parcel parcel) {
-        price = parcel.readInt();
-        collegeName = parcel.readString();
-        location = parcel.readString();
-        setting = parcel.readString();
-        docId = parcel.readString();
+        collegeName=parcel.readString();
+        aliasName=parcel.readString();
+        state=parcel.readString();
+        city= parcel.readString();
+        photo=parcel.readString();
+        rank= parcel.readInt();
+        ACT = parcel.readInt();
+        aidPercent = parcel.readInt();
+        acceptance = parcel.readInt();
+        tuition = parcel.readInt();
+        gpa = parcel.readInt();
+        enrollment = parcel.readInt();
+        SAT = parcel.readInt();
+        costAfterAid = parcel.readInt();
+        type = parcel.readString();
+        academicCalendar = parcel.readString();
+        setting =parcel.readString();
+        docID =parcel.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     /**
@@ -57,12 +113,26 @@ public class College implements Parcelable {
      *
      */
     @Override
+
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(price);
         dest.writeString(collegeName);
-        dest.writeString(location);
+        dest.writeString(aliasName);
+        dest.writeString(state);
+        dest.writeString(city);
+        dest.writeString(photo);
+        dest.writeInt(rank);
+        dest.writeInt(ACT);
+        dest.writeInt(aidPercent);
+        dest.writeInt(acceptance);
+        dest.writeInt(tuition);
+        dest.writeDouble(gpa);
+        dest.writeInt(enrollment);
+        dest.writeInt(SAT);
+        dest.writeInt(costAfterAid);
+        dest.writeString(type);
+        dest.writeString(academicCalendar);
         dest.writeString(setting);
-        dest.writeString(docId);
+        dest.writeString(docID);
 
     }
 
@@ -98,11 +168,6 @@ public class College implements Parcelable {
      * @return
      */
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
     public String getCollegeName() {
         return collegeName;
     }
@@ -111,20 +176,124 @@ public class College implements Parcelable {
         this.collegeName = collegeName;
     }
 
-    public String getLocation() {
-        return location;
+    public String getAliasName() {
+        return aliasName;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setAliasName(String aliasName) {
+        this.aliasName = aliasName;
     }
 
-    public int getPrice() {
-        return price;
+    public String getState() {
+        return state;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
+    public int getACT() {
+        return ACT;
+    }
+
+    public void setACT(int ACT) {
+        this.ACT = ACT;
+    }
+
+    public int getAidPercent() {
+        return aidPercent;
+    }
+
+    public void setAidPercent(int aidPercent) {
+        this.aidPercent = aidPercent;
+    }
+
+    public int getAcceptance() {
+        return acceptance;
+    }
+
+    public void setAcceptance(int acceptance) {
+        this.acceptance = acceptance;
+    }
+
+    public int getTuition() {
+        return tuition;
+    }
+
+    public void setTuition(int tuition) {
+        this.tuition = tuition;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public int getEnrollment() {
+        return enrollment;
+    }
+
+    public void setEnrollment(int enrollment) {
+        this.enrollment = enrollment;
+    }
+
+    public int getSAT() {
+        return SAT;
+    }
+
+    public void setSAT(int SAT) {
+        this.SAT = SAT;
+    }
+
+    public int getCostAfterAid() {
+        return costAfterAid;
+    }
+
+    public void setCostAfterAid(int costAfterAid) {
+        this.costAfterAid = costAfterAid;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getAcademicCalendar() {
+        return academicCalendar;
+    }
+
+    public void setAcademicCalendar(String academicCalendar) {
+        this.academicCalendar = academicCalendar;
     }
 
     public String getSetting() {
@@ -135,11 +304,11 @@ public class College implements Parcelable {
         this.setting = setting;
     }
 
-    public String getDocId() {
-        return docId;
+    public String getDocID() {
+        return docID;
     }
 
-    public void setDocId(String docId) {
-        this.docId = docId;
+    public void setDocID(String docID) {
+        this.docID = docID;
     }
 }
