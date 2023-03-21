@@ -95,7 +95,7 @@ public class FirebaseHelper {
         Map<String, Object> user = new HashMap<>();
         user.put("name", name);
         // Add a new document with a docID = to the authenticated user's UID
-        db.collection("ACTUALUSERS").document(newUID)
+        db.collection("users").document(newUID)
                 .set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -124,13 +124,13 @@ public class FirebaseHelper {
 
 
     private void addData(College c, FirestoreCallback firestoreCallback) {
-        db.collection("ACTUALUSERS").document(uid).collection("myCollegeList")
+        db.collection("users").document(uid).collection("myCollegeList")
                 .add(c)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         // This will set the docID key for the Memory that was just added.
-                        db.collection("ACTUALUSERS").document(uid).collection("myCollegeList").
+                        db.collection("users").document(uid).collection("myCollegeList").
                                 document(documentReference.getId()).update("docID", documentReference.getId());
                         Log.i(TAG, "just added " + c.getCollegeName());
                         readData(firestoreCallback);
@@ -160,7 +160,7 @@ certain things from occurring until after the onSuccess is finished.
 
     private void readData(FirestoreCallback firestoreCallback) {
         myColleges.clear();        // empties the AL so that it can get a fresh copy of data
-        db.collection("users")
+        db.collection("users").document(uid).collection("myCollegeList")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

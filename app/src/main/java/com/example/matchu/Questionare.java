@@ -17,6 +17,4 @@ public class Questionare extends AppCompatActivity {
         Intent intent = new Intent(Questionare.this, Favorites.class);
         startActivity(intent);
     }
-
-
 }
