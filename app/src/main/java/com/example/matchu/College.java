@@ -3,8 +3,18 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class College implements Parcelable {
+    private int image;
     private String collegeName;
     private String location;
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
     private int price;
     private String setting;
     private String docId;
@@ -15,6 +25,19 @@ public class College implements Parcelable {
         this.price = price;
         this.setting = setting;
         this.docId = docId;
+    }
+
+    public College(int image, String collegeName, String location, int price) {
+        this.image = image;
+        this.collegeName = collegeName;
+        this.location = location;
+        this.price = price;
+    }
+
+    public College(String collegeName, String location, int price) {
+        this.collegeName = collegeName;
+        this.location = location;
+        this.price = price;
     }
 
     public College(String collegeName) {
