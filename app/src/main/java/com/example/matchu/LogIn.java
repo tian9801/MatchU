@@ -88,6 +88,7 @@ public class LogIn extends AppCompatActivity  {
 
     public void signUpClicked(View view) {
         Log.i(TAG, "Sign up clicked");
+        firebaseHelper.readData();
         if (getValues()) {      // get username and password
             // Try to create an account using auth
             firebaseHelper.getmAuth().createUserWithEmailAndPassword(removeTrailingSpaces(userName), password)
@@ -148,6 +149,7 @@ public class LogIn extends AppCompatActivity  {
 
     public void logInClicked(View view) {
         Log.i(TAG, "Log in clicked");
+        firebaseHelper.readData();
         if (getValues()) {        // get username and password
             // if valid, log in user and then switch to next activity
             // Try to sign into an account using auth with given email and password
@@ -189,9 +191,9 @@ public class LogIn extends AppCompatActivity  {
                             }
 
                             // if log in fails, display a message to the user along with the exception from firebase auth
-                                Log.d(TAG, "Log in failed for " + userName + " " + password +
-                                        " because of \n"+ task.toString());
-                            }
+                            Log.d(TAG, "Log in failed for " + userName + " " + password +
+                                    " because of \n"+ task.toString());
+                        }
 
                     });
 
@@ -252,4 +254,5 @@ public class LogIn extends AppCompatActivity  {
 
 
 }
+
 

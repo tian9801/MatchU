@@ -31,43 +31,45 @@ public class Swipe extends AppCompatActivity {
     private CardStackLayoutManager manager;
     private SwipeAdapter adapter;
     BottomNavigationView nav;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipe);
-
         nav = findViewById(R.id.bottomNavigationView);
         nav.setSelectedItemId(R.id.swipe);
         nav.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
-                                          @Override
-                                          public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                                              switch (item.getItemId()) {
-                                                  case R.id.calender:
-                                                      startActivity(new Intent(getApplicationContext(), Calendar.class));
-                                                      overridePendingTransition(0, 0);
-                                                      return true;
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.calender:
+                        startActivity(new Intent(getApplicationContext(), Calendar.class));
+                        overridePendingTransition(0, 0);
+                        return true;
 
-                                                  case R.id.favorites:
-                                                      startActivity(new Intent(getApplicationContext(), Favorites.class));
-                                                      overridePendingTransition(0, 0);
-                                                      return true;
-                                                  case R.id.swipe:
-                                                      return true;
-                                                  case R.id.settings:
-                                                      startActivity(new Intent(getApplicationContext(), Settings.class));
-                                                      overridePendingTransition(0, 0);
-                                                      return true;
-                                                  case R.id.search:
-                                                      startActivity(new Intent(getApplicationContext(), Serch.class));
-                                                      overridePendingTransition(0, 0);
-                                                      return true;
+                    case R.id.favorites:
+                        startActivity(new Intent(getApplicationContext(), Favorites.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.swipe:
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.search:
+                        startActivity(new Intent(getApplicationContext(), Serch.class));
+                        overridePendingTransition(0, 0);
+                        return true;
 
 
-                                              }
-                                              return false;
-                                          }
-                                      });
-            CardStackView cardStackView = findViewById(R.id.card_stack_view);
+                }
+                return false;
+            }
+        });
+
+        CardStackView cardStackView = findViewById(R.id.card_stack_view);
             manager = new CardStackLayoutManager(this, new CardStackListener() {
                 @Override
                 public void onCardDragging(Direction direction, float ratio) {
@@ -142,10 +144,10 @@ public class Swipe extends AppCompatActivity {
     }
     private List<College> addList() {
         List<College> items = new ArrayList<>();
-        items.add(new College(R.drawable.steph, "hi", "24", 5));
-        items.add(new College(R.drawable.steph, "hi", "24", 5));
-        items.add(new College(R.drawable.steph, "hi", "24", 5));
-        items.add(new College(R.drawable.steph, "hi", "24", 5));
+        items.add(new College(R.drawable.steph, "hi", "24", "poo"));
+        items.add(new College(R.drawable.steph, "hi", "24", "poo"));
+        items.add(new College(R.drawable.steph, "hi", "24", "poo"));
+        items.add(new College(R.drawable.steph, "hi", "24", "poo"));
         return items;
     }
 

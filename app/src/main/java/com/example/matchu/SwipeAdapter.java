@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.yuyakaido.android.cardstackview.CardStackView;
 
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
@@ -57,7 +58,7 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
 
             name.setText(college.getCollegeName());
             location.setText(college.getLocation());
-            price.setText(college.getPrice());
+            price.setText(college.getMula());
         }
     }
 
