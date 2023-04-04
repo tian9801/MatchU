@@ -144,10 +144,8 @@ public class Swipe extends AppCompatActivity {
     }
     private List<College> addList() {
         List<College> items = new ArrayList<>();
-        items.add(new College(R.drawable.steph, "hi", "24", "poo"));
-        items.add(new College(R.drawable.steph, "hi", "24", "poo"));
-        items.add(new College(R.drawable.steph, "hi", "24", "poo"));
-        items.add(new College(R.drawable.steph, "hi", "24", "poo"));
+       // items.add(new College(R.drawable.steph, "hi", "24", 5));
+
         return items;
     }
 

@@ -1,38 +1,38 @@
 
 package com.example.matchu;
-        import static androidx.core.content.ContextCompat.startActivity;
+import static androidx.core.content.ContextCompat.startActivity;
 
-        import android.app.Activity;
-        import android.app.Application;
-        import android.content.Intent;
-        import android.util.Log;
-        import android.widget.Toast;
+import android.app.Activity;
+import android.app.Application;
+import android.content.Intent;
+import android.util.Log;
+import android.widget.Toast;
 
-        import androidx.annotation.NonNull;
-        import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-        import com.google.android.gms.tasks.OnCompleteListener;
-        import com.google.android.gms.tasks.OnFailureListener;
-        import com.google.android.gms.tasks.OnSuccessListener;
-        import com.google.android.gms.tasks.Task;
-        import com.google.firebase.auth.AuthResult;
-        import com.google.firebase.auth.FirebaseAuth;
-        import com.google.firebase.auth.FirebaseUser;
-        import com.google.firebase.firestore.CollectionReference;
-        import com.google.firebase.firestore.DocumentReference;
-        import com.google.firebase.firestore.DocumentSnapshot;
-        import com.google.firebase.firestore.EventListener;
-        import com.google.firebase.firestore.FirebaseFirestore;
-        import com.google.firebase.firestore.FirebaseFirestoreException;
-        import com.google.firebase.firestore.QueryDocumentSnapshot;
-        import com.google.firebase.firestore.QuerySnapshot;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
-        import java.lang.reflect.Array;
-        import java.util.ArrayList;
-        import java.util.Collection;
-        import java.util.HashMap;
-        import java.util.Map;
-        import java.util.concurrent.Executor;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.Executor;
 
 /**
  * The purpose of this class is to hold ALL the code to communicate with Firebase.  This class
@@ -146,6 +146,14 @@ public class FirebaseHelper {
     }
 
 
+    public static ArrayList<College> getMyColleges() {
+        return myColleges;
+    }
+
+    public static void setMyColleges(ArrayList<College> myColleges) {
+        FirebaseHelper.myColleges = myColleges;
+    }
+
     public ArrayList<College> getMemoryArrayList() {
         return myColleges;
     }
@@ -182,7 +190,7 @@ public class FirebaseHelper {
                                 myColleges.add(college);
                             }
                             Log.i(TAG, "Success reading data: "+ myColleges.toString());
-                            //firestoreCallback.onCallback(myColleges);
+                            firestoreCallback.onCallback(myColleges);
                         }
                         else {
                             Log.d(TAG, "Error getting documents: " + task.getException());
@@ -201,7 +209,3 @@ public class FirebaseHelper {
 
 
 }
-
-
-
-
