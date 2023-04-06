@@ -58,7 +58,7 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
     class ViewHolder extends RecyclerView.ViewHolder{
         ImageView image;
         TextView name, location, price;
-        int pic = drawableFromUrl(College.getPhoto());
+
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.item_image);
@@ -68,18 +68,17 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
         }
 
         void setData(College college) {
-            Integer hi = college.getTuition();
-            String text =  Integer.valueOf(hi).toString();
+
 
             Picasso.get()
-                    .load(pic)
+                    .load(college.getImage())
                     .fit()
                     .centerCrop()
                     .into(image);
 
-            name.setText(college.getCollegeName());
-            location.setText(college.getState());
-            price.setText(text);
+            name.setText(college.getName());
+            location.setText(college.getLocation());
+            price.setText(college.getMula());
         }
     }
 

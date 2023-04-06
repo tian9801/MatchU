@@ -23,7 +23,7 @@
             android:name=".Calendar"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".Favorites"
             android:exported="false" />
         <activity
             android:name=".Swipe"
@@ -32,7 +32,7 @@
             android:name=".Questionare"
             android:exported="false" />
         <activity
-            android:name=".Favorites"
+            android:name=".LogIn"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

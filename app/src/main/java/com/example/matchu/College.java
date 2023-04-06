@@ -16,13 +16,6 @@ public class College implements Parcelable {
     private double gpa;
     private int enrollment;
 
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
 
 
     private int SAT;
@@ -34,6 +27,51 @@ public class College implements Parcelable {
 
     private String mula;
     private int image;
+
+
+    public String getMula() {
+        return mula;
+    }
+
+    public void setMula(String mula) {
+        this.mula = mula;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String location;
+    private String name;
+
+    public College (int image, String name, String location, String mula){
+        this.name = name;
+        this.image = image;
+        this.location = location;
+        this.mula = mula;
+
+    }
+
 
 
     public College(String collegeName, String aliasName, String state, String city, String photo, int rank, int ACT, int aidPercent, int acceptance, int tuition, double gpa, int enrollment, int SAT, int costAfterAid, String type, String academicCalendar, String setting, String docID) {
@@ -100,6 +138,7 @@ public class College implements Parcelable {
      *
      * @param parcel the parcel that is received from the intent
      */
+
 
     public College(Parcel parcel) {
         collegeName=parcel.readString();
