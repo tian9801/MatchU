@@ -61,15 +61,15 @@ public class Favorites extends AppCompatActivity {
 
     }
 
-    /*public void addCollege(View view) {
+    public void addCollege(View view) {
         String col = collegeName.getText().toString();
-        College c = new College(college);
+        College c = new College(col);
         LogIn.firebaseHelper.addData(c);
 
         collegeName.setText("");
 
     }
-*/
+
 
 
 }
