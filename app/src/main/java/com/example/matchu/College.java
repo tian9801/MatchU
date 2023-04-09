@@ -8,7 +8,7 @@ public class College implements Parcelable {
     private String state;
     private String city;
     private String photo;
-    private int rank;
+    private String rank;
     private int ACT;
     private int aidPercent;
     private int acceptance;
@@ -74,7 +74,8 @@ public class College implements Parcelable {
 
 
 
-    public College(String collegeName, String aliasName, String state, String city, String photo, int rank, int ACT, int aidPercent, int acceptance, int tuition, double gpa, int enrollment, int SAT, int costAfterAid, String type, String academicCalendar, String setting, String docID) {
+
+    public College(String collegeName, String aliasName, String state, String city, String photo, String rank, int ACT, int aidPercent, int acceptance, int tuition, double gpa, int enrollment, int SAT, int costAfterAid, String type, String academicCalendar, String setting, String docID) {
         this.collegeName = collegeName;
         this.aliasName = aliasName;
         this.state = state;
@@ -96,8 +97,29 @@ public class College implements Parcelable {
     }
 
 
+<<<<<<< Updated upstream
     public College(String photo, String collegeName, String state, int tuition) {
         this.photo = photo;
+=======
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public College(int image, String collegeName, String location, String mula) {
+        this.image = image;
+>>>>>>> Stashed changes
         this.collegeName = collegeName;
         this.state = state;
         this.tuition = tuition;
@@ -113,7 +135,7 @@ public class College implements Parcelable {
         state="No state";
         city= "No city";
         photo="No photo";
-        rank= 0;
+        rank= "0";
         ACT = 0;
         aidPercent = 0;
         acceptance = 0;
@@ -146,7 +168,7 @@ public class College implements Parcelable {
         state=parcel.readString();
         city= parcel.readString();
         photo=parcel.readString();
-        rank= parcel.readInt();
+        rank= parcel.readString();
         ACT = parcel.readInt();
         aidPercent = parcel.readInt();
         acceptance = parcel.readInt();
@@ -181,7 +203,7 @@ public class College implements Parcelable {
         dest.writeString(state);
         dest.writeString(city);
         dest.writeString(photo);
-        dest.writeInt(rank);
+        dest.writeString(rank);
         dest.writeInt(ACT);
         dest.writeInt(aidPercent);
         dest.writeInt(acceptance);
@@ -269,11 +291,11 @@ public class College implements Parcelable {
         this.photo = photo;
     }
 
-    public int getRank() {
+    public String getRank() {
         return rank;
     }
 
-    public void setRank(int rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 
