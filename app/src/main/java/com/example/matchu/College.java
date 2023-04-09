@@ -121,11 +121,11 @@ public class College implements Parcelable {
         this.location = location;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

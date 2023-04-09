@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.yuyakaido.android.cardstackview.CardStackView;
+
 
 import java.io.IOException;
 import java.io.InputStream;
