@@ -5,22 +5,30 @@ import android.os.Parcelable;
 public class College implements Parcelable {
     private String collegeName;
     private String location;
-    private int price;
+    private String price;
     private String setting;
     private String docId;
+    private int image;
 
-    public College(String collegeName, String location, int price, String setting, String docId) {
+    public College(String collegeName, String location, String price, String setting, String docId) {
         this.collegeName = collegeName;
         this.location = location;
         this.price = price;
         this.setting = setting;
         this.docId = docId;
     }
+    public College(int image, String collegeName, String location, String price) {
+        this.image = image;
+        this.collegeName = collegeName;
+        this.location = location;
+        this.price = price;
+
+    }
 
 
     // A default constructor is required for the Parcelable interface to work
     public College() {
-        price = 0;
+        price = "ji";
         collegeName = "No name";
         location = "No desc";
         setting = "No setting";
@@ -39,7 +47,7 @@ public class College implements Parcelable {
      */
 
     public College(Parcel parcel) {
-        price = parcel.readInt();
+        price = parcel.readString();
         collegeName = parcel.readString();
         location = parcel.readString();
         setting = parcel.readString();
@@ -55,7 +63,7 @@ public class College implements Parcelable {
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(price);
+        dest.writeString(price);
         dest.writeString(collegeName);
         dest.writeString(location);
         dest.writeString(setting);
@@ -135,5 +143,13 @@ public class College implements Parcelable {
 
     public void setDocId(String docId) {
         this.docId = docId;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }
