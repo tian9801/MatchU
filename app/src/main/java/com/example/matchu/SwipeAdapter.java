@@ -78,7 +78,7 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
 
             name.setText(college.getCollegeName());
             location.setText(college.getLocation());
-            price.setText(college.getPrice());
+            price.setText(college.getMula());
         }
     }
 

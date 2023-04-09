@@ -2,115 +2,44 @@ package com.example.matchu;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class College implements Parcelable {
+public class College {
     private String collegeName;
-    private String location;
-    private String price;
+    private String aliasName;
+    private String state;
+    private String city;
+    private String photo;
+    private String rank;
+    private int ACT;
+    private int aidPercent;
+    private int acceptance;
+    private int tuition;
+    private double gpa;
+    private int enrollment;
+    private int SAT;
+    private int costAfterAid;
+    private String type;
+    private String academicCalendar;
     private String setting;
-    private String docId;
+    private String docID;
+
+    private String mula;
     private int image;
 
-    public College(String collegeName, String location, String price, String setting, String docId) {
-        this.collegeName = collegeName;
-        this.location = location;
-        this.price = price;
-        this.setting = setting;
-        this.docId = docId;
+
+    public String getMula() {
+        return mula;
     }
-    public College(int image, String collegeName, String location, String price) {
+
+    public void setMula(String mula) {
+        this.mula = mula;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
         this.image = image;
-        this.collegeName = collegeName;
-        this.location = location;
-        this.price = price;
-
-    }
-
-
-    // A default constructor is required for the Parcelable interface to work
-    public College() {
-        price = "ji";
-        collegeName = "No name";
-        location = "No desc";
-        setting = "No setting";
-        docId = "No docID yet";
-    }
-
-
-    /**
-     * This is a "constructor" of sorts that is needed with the Parceable interface to
-     * tell the intent how to create a Memory object when it is received from the intent
-     * basically it is setting each instance variable as a String or Int
-     * <p>
-     * MAKE SURE THE ORDER OF THESE VARS IS CONSISTENT WITH ALL CONSTRUCTOR TYPE METHODS
-     *
-     * @param parcel the parcel that is received from the intent
-     */
-
-    public College(Parcel parcel) {
-        price = parcel.readString();
-        collegeName = parcel.readString();
-        location = parcel.readString();
-        setting = parcel.readString();
-        docId = parcel.readString();
-    }
-
-    /**
-     * This is what is used when we send the Memory object through an intent
-     * It is also a method that is part of the Parceable interface and is needed
-     * to set up the object that is being sent.  Then, when it is received, the
-     * other Memory constructor that accepts a Parcel reference can "unpack it"
-     *
-     */
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(price);
-        dest.writeString(collegeName);
-        dest.writeString(location);
-        dest.writeString(setting);
-        dest.writeString(docId);
-
-    }
-
-    // this code is needed for the Memory class to work with Parcelable
-    public static final Parcelable.Creator<College> CREATOR = new
-            Parcelable.Creator<College>() {
-
-                @Override
-                public College createFromParcel(Parcel parcel) {
-                    return new College(parcel);
-                }
-
-                @Override
-                public College[] newArray(int size) {
-                    return new College[0];
-                }
-            };
-
-
-    /**
-     * This method is required for the Parceable interface.  As of now, this method
-     * is in the default state and doesn't really do anything.
-     *
-     * If your Parcelable class will have child classes, you'll need to
-     * take some extra care with the describeContents() method. This would
-     * let you identify the specific child class that should be created by
-     * the Parcelable.Creator. You can read more about how this works on
-     *  Stack Overflow with this link.
-     *           https://stackoverflow.com/questions/4778834/purpose-of-describecontents-of-parcelable-interface
-     * @return
-     */
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public String getCollegeName() {
-        return collegeName;
-    }
-
-    public void setCollegeName(String collegeName) {
-        this.collegeName = collegeName;
     }
 
     public String getLocation() {
@@ -121,12 +50,172 @@ public class College implements Parcelable {
         this.location = location;
     }
 
-    public String getPrice() {
-        return price;
+
+    private String location;
+    private String name;
+
+    public College (int image, String collegeName, String location, String mula){
+        this.collegeName = collegeName;
+        this.image = image;
+        this.location = location;
+        this.mula = mula;
+
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+
+
+
+    public College(String collegeName, String aliasName, String state, String city, String photo, String rank, int ACT, int aidPercent, int acceptance, int tuition, double gpa, int enrollment, int SAT, int costAfterAid, String type, String academicCalendar, String setting) {
+        this.collegeName = collegeName;
+        this.aliasName = aliasName;
+        this.state = state;
+        this.city = city;
+        this.photo = photo;
+        this.rank = rank;
+        this.ACT = ACT;
+        this.aidPercent = aidPercent;
+        this.acceptance = acceptance;
+        this.tuition = tuition;
+        this.gpa = gpa;
+        this.enrollment = enrollment;
+        this.SAT = SAT;
+        this.costAfterAid = costAfterAid;
+        this.type = type;
+        this.academicCalendar = academicCalendar;
+        this.setting = setting;
+
+    }
+    public College (){
+
+    }
+
+
+    public String getCollegeName() {
+        return collegeName;
+    }
+
+    public void setCollegeName(String collegeName) {
+        this.collegeName = collegeName;
+    }
+
+    public String getAliasName() {
+        return aliasName;
+    }
+
+    public void setAliasName(String aliasName) {
+        this.aliasName = aliasName;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
+    public int getACT() {
+        return ACT;
+    }
+
+    public void setACT(int ACT) {
+        this.ACT = ACT;
+    }
+
+    public int getAidPercent() {
+        return aidPercent;
+    }
+
+    public void setAidPercent(int aidPercent) {
+        this.aidPercent = aidPercent;
+    }
+
+    public int getAcceptance() {
+        return acceptance;
+    }
+
+    public void setAcceptance(int acceptance) {
+        this.acceptance = acceptance;
+    }
+
+    public int getTuition() {
+        return tuition;
+    }
+
+    public void setTuition(int tuition) {
+        this.tuition = tuition;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public int getEnrollment() {
+        return enrollment;
+    }
+
+    public void setEnrollment(int enrollment) {
+        this.enrollment = enrollment;
+    }
+
+    public int getSAT() {
+        return SAT;
+    }
+
+    public void setSAT(int SAT) {
+        this.SAT = SAT;
+    }
+
+    public int getCostAfterAid() {
+        return costAfterAid;
+    }
+
+    public void setCostAfterAid(int costAfterAid) {
+        this.costAfterAid = costAfterAid;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getAcademicCalendar() {
+        return academicCalendar;
+    }
+
+    public void setAcademicCalendar(String academicCalendar) {
+        this.academicCalendar = academicCalendar;
     }
 
     public String getSetting() {
@@ -137,19 +226,47 @@ public class College implements Parcelable {
         this.setting = setting;
     }
 
-    public String getDocId() {
-        return docId;
+    public String getDocID() {
+        return docID;
     }
 
-    public void setDocId(String docId) {
-        this.docId = docId;
+    public void setDocID(String docID) {
+        this.docID = docID;
     }
 
-    public int getImage() {
-        return image;
+    public String getName() {
+        return name;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "College{" +
+                "collegeName='" + collegeName + '\'' +
+                ", aliasName='" + aliasName + '\'' +
+                ", state='" + state + '\'' +
+                ", city='" + city + '\'' +
+                ", photo='" + photo + '\'' +
+                ", rank='" + rank + '\'' +
+                ", ACT=" + ACT +
+                ", aidPercent=" + aidPercent +
+                ", acceptance=" + acceptance +
+                ", tuition=" + tuition +
+                ", gpa=" + gpa +
+                ", enrollment=" + enrollment +
+                ", SAT=" + SAT +
+                ", costAfterAid=" + costAfterAid +
+                ", type='" + type + '\'' +
+                ", academicCalendar='" + academicCalendar + '\'' +
+                ", setting='" + setting + '\'' +
+                ", docID='" + docID + '\'' +
+                ", mula='" + mula + '\'' +
+                ", image=" + image +
+                ", location='" + location + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
