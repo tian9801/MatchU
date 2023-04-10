@@ -1,6 +1,6 @@
 package com.example.matchu;
-
-import java.net.URL;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 public class College {
     private String collegeName;
@@ -8,6 +8,7 @@ public class College {
     private String state;
     private String city;
     private String photo;
+    private String rank;
     private int ACT;
     private int aidPercent;
     private int acceptance;
@@ -25,6 +26,13 @@ public class College {
     private int image;
 
 
+    public String getMula() {
+        return mula;
+    }
+
+    public void setMula(String mula) {
+        this.mula = mula;
+    }
 
     public int getImage() {
         return image;
@@ -34,21 +42,36 @@ public class College {
         this.image = image;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
 
     private String location;
     private String name;
 
+    public College (int image, String collegeName, String location, String mula){
+        this.collegeName = collegeName;
+        this.image = image;
+        this.location = location;
+        this.mula = mula;
+
+    }
 
 
 
 
-    public College(String collegeName, String aliasName, String state, String city, String photo, int ACT, int aidPercent, int acceptance, int tuition, double gpa, int enrollment, int SAT, int costAfterAid, String type, String academicCalendar, String setting) {
+    public College(String collegeName, String aliasName, String state, String city, String photo, String rank, int ACT, int aidPercent, int acceptance, int tuition, double gpa, int enrollment, int SAT, int costAfterAid, String type, String academicCalendar, String setting) {
         this.collegeName = collegeName;
         this.aliasName = aliasName;
         this.state = state;
         this.city = city;
         this.photo = photo;
+        this.rank = rank;
         this.ACT = ACT;
         this.aidPercent = aidPercent;
         this.acceptance = acceptance;
@@ -105,6 +128,14 @@ public class College {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
     }
 
     public int getACT() {
@@ -219,6 +250,7 @@ public class College {
                 ", state='" + state + '\'' +
                 ", city='" + city + '\'' +
                 ", photo='" + photo + '\'' +
+                ", rank='" + rank + '\'' +
                 ", ACT=" + ACT +
                 ", aidPercent=" + aidPercent +
                 ", acceptance=" + acceptance +
@@ -237,6 +269,4 @@ public class College {
                 ", name='" + name + '\'' +
                 '}';
     }
-
-
 }

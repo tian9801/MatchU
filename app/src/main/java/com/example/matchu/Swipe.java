@@ -112,9 +112,6 @@ public class Swipe extends AppCompatActivity {
 
 
 
-    List<College> collegeDB = Questionare.getCollegeDB();
-
-
 
 
 
@@ -480,8 +477,18 @@ public class Swipe extends AppCompatActivity {
     private List<College> addList() {
 
 
-        return collegeDB;
+        List<College> items = new ArrayList<>();
 
+
+        items.add(new College(R.drawable.steph, "hi", "24", "9"));
+
+
+
+
+
+
+
+        return items;
 
 
     }

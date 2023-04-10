@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -23,8 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
-     List<College> items= Questionare.getCollegeDB();
-
+    private List<College> items;
 
     public SwipeAdapter(List<College> items) {
         this.items = items;
@@ -69,22 +68,17 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
         }
 
         void setData(College college) {
-            String url = college.getPhoto();
-            Integer hi = college.getTuition();
-            String money = hi.toString();
 
-            Log.i("poopoo",  "hi"+ url);
-            url = (url).replace("http:", "https:");
+
             Picasso.get()
-                    .load(url)
-                    .placeholder(R.drawable.steph)
-                    .resize(100,100)
-                    .centerInside()
+                    .load(college.getImage())
+                    .fit()
+                    .centerCrop()
                     .into(image);
 
             name.setText(college.getCollegeName());
-            location.setText(college.getState());
-            price.setText("$" + money);
+            location.setText(college.getLocation());
+            price.setText(college.getMula());
         }
     }
 
