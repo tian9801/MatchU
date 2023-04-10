@@ -1,8 +1,6 @@
 package com.example.matchu;
 
 
-import static java.lang.Integer.parseInt;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -19,14 +17,6 @@ import com.google.firebase.auth.FirebaseAuthEmailException;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
-
 public class LogIn extends AppCompatActivity  {
 
     // xml elements
@@ -42,7 +32,6 @@ public class LogIn extends AppCompatActivity  {
     // Use the same TAG all the time for Log statements. Feel free to change the value of TAG
     public final String TAG = "Denna";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,121 +43,10 @@ public class LogIn extends AppCompatActivity  {
         signUpB = findViewById(R.id.signUp);
         userNameET = findViewById(R.id.email);
         passwordET = findViewById(R.id.password);
-        readCollegeData();
 
 
     }
-    private List<College> collegeDB = new ArrayList<>();
 
-    private void readCollegeData(){
-        InputStream is = getResources().openRawResource(R.raw.collegedata);
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(is, Charset.forName("UTF-8"))
-        );
-
-
-        String line = "";
-        try {
-            //Step over headers
-            reader.readLine();
-            while ((line = reader.readLine()) != null) {
-                //split by commas
-                String[] tokens = line.split(",");
-                //read the data
-                College college = new College();
-                if (tokens[0].length() > 0){
-                    college.setCollegeName(tokens[0]);
-                } else {
-                    college.setCollegeName("na");
-                }
-                if (tokens[1].length() > 0){
-                    college.setAliasName(tokens[1]);
-                } else {
-                    college.setAliasName("na");
-                }
-                if (tokens[2].length() > 0){
-                    college.setState(tokens[2]);
-                } else {
-                    college.setState("na");
-                }
-                if (tokens[3].length() > 0){
-                    college.setCity(tokens[3]);
-                } else {
-                    college.setCity("na");
-                }
-                if (tokens[4].length() > 0){
-                    college.setPhoto(tokens[4]);
-                } else {
-                    college.setPhoto("na");
-                }
-                if (tokens[5].length() > 0){
-                    college.setRank(tokens[5]);
-                } else {
-                    college.setRank("na");
-                }
-                if (tokens[6].length() > 0){
-                    college.setACT(parseInt(tokens[6]));
-                } else {
-                    college.setACT(0);
-                }
-                if (tokens[7].length() > 0){
-                    college.setAidPercent(parseInt(tokens[7]));
-                } else {
-                    college.setAidPercent(0);
-                }
-                if (tokens[8].length() > 0){
-                    college.setAcceptance(parseInt(tokens[8]));
-                } else {
-                    college.setAcceptance(0);
-                }
-                if (tokens[9].length() > 0){
-                    college.setTuition(parseInt(tokens[9]));
-                } else {
-                    college.setTuition(0);
-                }
-                if (tokens[10].length() > 0){
-                    college.setGpa(Double.parseDouble(tokens[10]));
-                } else {
-                    college.setGpa(0.0);
-                }
-                if (tokens[11].length() > 0){
-                    college.setEnrollment(parseInt(tokens[11]));
-                } else {
-                    college.setEnrollment(0);
-                }
-                if (tokens[12].length() > 0){
-                    college.setSAT(parseInt(tokens[12]));
-                } else {
-                    college.setSAT(0);
-                }
-                if (tokens[13].length() > 0){
-                    college.setCostAfterAid(parseInt(tokens[13]));
-                } else {
-                    college.setCostAfterAid(0);
-                }
-                if (tokens[14].length() > 0){
-                    college.setType(tokens[14]);
-                } else {
-                    college.setType("na");
-                }
-                if (tokens[15].length() > 0){
-                    college.setAcademicCalendar(tokens[15]);
-                } else {
-                    college.setAcademicCalendar("na");
-                }
-
-
-                collegeDB.add(college);
-                Log.d("myActivity", "Hi "+college);
-
-
-
-            }
-        }catch(IOException e){
-            Log.wtf("MyActivity", "Error reading file" + line, e);
-            e.printStackTrace();
-        }
-    }
     @Override
     public void onStart() {
         super.onStart();
