@@ -11,21 +11,22 @@ import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.List;
+
 public class Favorites extends AppCompatActivity {
 
     BottomNavigationView nav;
-
-   // ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.listView,StringArray);
-   // ListView listView = (ListView) findViewById(R.id.listview);
-//listView.setAdapter(adapter);
+    ListView listView;
+    List<College> likedList = Swipe.likedList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
-        //final ListView list = findViewById(R.id.list);
-       // ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(list.setAdapter(arrayAdapter);
 
+        listView = (ListView)findViewById(R.id.customListView);
+        CustomBaseAdapter customBaseAdapter = new CustomBaseAdapter(getApplicationContext(), likedList);
+        listView.setAdapter(customBaseAdapter);
 
         nav = findViewById(R.id.bottomNavigationView);
         nav.setSelectedItemId(R.id.favorites);

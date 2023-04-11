@@ -38,7 +38,9 @@
         <entry key="app/src/main/res/drawable/ic_launcher.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/overlay_black.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_custom_list_view.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/activity_favorites.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_swipe.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/listview.xml" value="0.12031408308004053" />
