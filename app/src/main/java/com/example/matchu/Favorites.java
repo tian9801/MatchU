@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -13,10 +15,16 @@ public class Favorites extends AppCompatActivity {
 
     BottomNavigationView nav;
 
+   // ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.listView,StringArray);
+   // ListView listView = (ListView) findViewById(R.id.listview);
+//listView.setAdapter(adapter);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
+        //final ListView list = findViewById(R.id.list);
+       // ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(list.setAdapter(arrayAdapter);
 
 
         nav = findViewById(R.id.bottomNavigationView);

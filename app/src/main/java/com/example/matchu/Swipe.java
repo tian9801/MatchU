@@ -109,13 +109,12 @@ public class Swipe extends AppCompatActivity {
 
 
     BottomNavigationView nav;
+    private int i = 0;
 
 
 
     List<College> collegeDB = Questionare.getCollegeDB();
-
-
-
+    public static List<College> likedList = new ArrayList<>();
 
 
 
@@ -268,15 +267,17 @@ public class Swipe extends AppCompatActivity {
 
             public void onCardSwiped(Direction direction) {
 
-
                 Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
+
+
+
 
 
                 if (direction == Direction.Right){
 
 
                     Toast.makeText(Swipe.this, "Direction Right", Toast.LENGTH_SHORT).show();
-
+                   likedList.add(collegeDB.get(i));
 
                 }
 
@@ -307,14 +308,8 @@ public class Swipe extends AppCompatActivity {
 
                 }
 
-
-
-
-
-
-
-
-
+                i++;
+               Log.i("poop", "hi "+ likedList);
 
 
 
@@ -443,9 +438,6 @@ public class Swipe extends AppCompatActivity {
 
 
         cardStackView.setItemAnimator(new DefaultItemAnimator());
-
-
-
 
 
 

@@ -1,4 +1,5 @@
 package com.example.matchu;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 
@@ -24,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
      List<College> items= Questionare.getCollegeDB();
+    private Context context;
 
 
     public SwipeAdapter(List<College> items) {
@@ -36,11 +39,17 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.swipe_layout, parent, false);
         return new ViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.setData(items.get(position));
+        context = holder.itemView.getContext();
+        College c = items.get(position);
+        holder.setData(items.get(position), holder);
+        Glide.with(context).load(c.getPhoto()).placeholder(R.drawable.steph).
+                error(R.drawable.steph).override(1000,1000).centerCrop().into(holder.image);
+
     }
 
     @Override
@@ -68,19 +77,19 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
             price = itemView.findViewById(R.id.price);
         }
 
-        void setData(College college) {
+        void setData(College college, SwipeAdapter.ViewHolder holder) {
             String url = college.getPhoto();
             Integer hi = college.getTuition();
             String money = hi.toString();
 
             Log.i("poopoo",  "hi"+ url);
-            url = (url).replace("http:", "https:");
-            Picasso.get()
-                    .load(url)
-                    .placeholder(R.drawable.steph)
-                    .resize(100,100)
-                    .centerInside()
-                    .into(image);
+            //url = (url).replace("https:", "");
+
+            Log.i("poopoo", "this is in photo "+ image);
+
+
+
+
 
             name.setText(college.getCollegeName());
             location.setText(college.getState());

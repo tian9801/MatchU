@@ -29,6 +29,7 @@
         <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_swipe.xml" value="0.1" />
         <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/menu/navbar.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/favorite.xml" value="0.16" />
         <entry key="app/src/main/res/drawable/gradation_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_arrow_back_black_24dp.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_arrow_downward_black_24dp.xml" value="0.1" />
@@ -37,8 +38,10 @@
         <entry key="app/src/main/res/drawable/ic_launcher.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/overlay_black.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_favorites.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_swipe.xml" value="0.24895833333333334" />
+        <entry key="app/src/main/res/layout/listview.xml" value="0.12031408308004053" />
         <entry key="app/src/main/res/layout/swipe_layout.xml" value="0.24895833333333334" />
       </map>
     </option>
