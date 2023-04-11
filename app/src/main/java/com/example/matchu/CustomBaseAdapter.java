@@ -36,7 +36,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
-        convertView = inflater.inflate(R.layout.activity_custom_list_view, null);
+        convertView = inflater.inflate(R.layout.text_layout, null);
         TextView txtView = (TextView)convertView.findViewById(R.id.textView);
         txtView.setText(likedList.get(i).getCollegeName());
         TextView hi = (TextView)convertView.findViewById(R.id.state);
