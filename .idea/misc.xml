@@ -46,6 +46,9 @@
         <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/activity_swipe.xml" value="0.1" />
         <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/layout/swipe_layout.xml" value="0.1" />
         <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/menu/navbar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_calendar.xml" value="0.24592391304347827" />
+        <entry key="app/src/main/res/layout/activity_questionare.xml" value="0.4448562977644931" />
+        <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.25" />
       </map>
     </option>
   </component>
