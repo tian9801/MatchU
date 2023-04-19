@@ -4,26 +4,31 @@
     <item android:title="Calender"
         android:icon = "@drawable/calender"
         android:id="@+id/calender"
+        android:background="@color/lightBlue"
 
         />
     <item android:title="Search"
         android:icon = "@drawable/search"
         android:id="@+id/search"
+        android:background="@color/lightBlue"
 
         />
     <item android:title="Favorite"
         android:icon = "@drawable/favorite"
         android:id="@+id/favorites"
+        android:background="@color/lightBlue"
 
         />
     <item android:title="Swipe"
         android:icon = "@drawable/swipe"
         android:id="@+id/swipe"
+        android:background="@color/lightBlue"
 
         />
     <item android:title="Settings"
         android:icon = "@drawable/settings"
         android:id="@+id/settings"
+        android:background="@color/lightBlue"
 
         />
 </menu>

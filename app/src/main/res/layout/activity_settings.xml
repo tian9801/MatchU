@@ -23,10 +23,11 @@
         android:id="@+id/logout"
         android:layout_width="130dp"
         android:layout_height="38dp"
-        android:background="@color/design_default_color_on_secondary"
+        android:backgroundTint="@color/lightBlue"
         android:fontFamily="@font/poppins_medium"
         android:onClick="logOutClicked"
         android:text="LOG OUT"
+        app:cornerRadius="0dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,10 +40,11 @@
         android:id="@+id/changePreferences"
         android:layout_width="166dp"
         android:layout_height="65dp"
-        android:background="@color/design_default_color_on_secondary"
+        android:backgroundTint="@color/lightBlue"
         android:fontFamily="@font/poppins_medium"
         android:onClick="changePreferences"
         android:text="edit preferences"
+        app:cornerRadius="0dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +64,9 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.372"
+        android:thumbTint="@drawable/thumb"
+        android:trackTint="@drawable/track"/>
 
     <Spinner
         android:id="@+id/spinner"

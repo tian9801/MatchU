@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/gloock_regular"
         android:text="MatchU"
-        android:textColor="@color/black"
+        android:textColor="@color/lightBlue"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,10 +46,9 @@
 
     <Button
         android:id="@+id/logIn"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="137dp"
         android:layout_height="36dp"
-        android:background="@color/darkGreen"
+        android:background="@color/lightBlue"
         android:fontFamily="@font/poppins_medium"
         android:onClick="logInClicked"
 
@@ -112,6 +111,7 @@
         android:fontFamily="@font/poppins_medium"
         android:hint="PASSWORD"
         android:inputType="textPersonName"
+        android:textColor="@color/lightBlue"
         android:textColorHint="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"

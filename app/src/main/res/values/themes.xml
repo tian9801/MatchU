@@ -6,4 +6,17 @@
         <!-- Status bar color. -->
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Switch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/darkGreen</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/lightGreen</item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/lightBlue</item>
+    </style>
+
+
 </resources>
