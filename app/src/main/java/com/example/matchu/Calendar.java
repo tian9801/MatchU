@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -108,9 +109,10 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
                 daysInMonthArray.add("");
 
             }else{
+                daysInMonthArray.add(String.valueOf(i - daysOfWeek));
 
             }
-                daysInMonthArray.add(String.valueOf(i + daysOfWeek));
+
             
 
 
@@ -155,7 +157,8 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onItemClick(int position, String dayText) {
-        if(dayText.equals("")){
+        if(!dayText.equals("")){
+            Log.i("what", " " + monthYearfromDate(selectedDate));
             String message = "Selected Date " + dayText + " " + monthYearfromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
