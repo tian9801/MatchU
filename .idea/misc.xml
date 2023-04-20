@@ -24,11 +24,19 @@
         <entry key="..\:/Users/rayamajhi1629/Documents/GitHub/MatchU/app/src/main/res/menu/navbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/drawable/settings.xml" value="0.2585" />
         <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/drawable/swipe.xml" value="0.2585" />
+        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_calendar.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_custom_list_view.xml" value="0.3416666666666667" />
         <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_favorites.xml" value="0.346875" />
         <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_questionare.xml" value="0.25" />
         <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_serch.xml" value="0.346875" />
         <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_settings.xml" value="0.22509057971014493" />
         <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_swipe.xml" value="0.346875" />
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        <entry key="..\:/Users/sharma1208.D211/Documents/GitHub/MatchU/app/src/main/res/layout/calendar_cell.xml" value="0.1661600810536981" />
+=======
+>>>>>>> Stashed changes
         <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/drawable/calender.xml" value="0.3675" />
         <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/drawable/favorite.xml" value="0.3675" />
         <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/drawable/ic_arrow_back_black_24dp.xml" value="0.333" />
@@ -45,6 +53,10 @@
         <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/activity_swipe.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/layout/calendar_cell.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tian9801.D211/Documents/GitHub/MatchU/app/src/main/res/menu/navbar.xml" value="0.36666666666666664" />
+<<<<<<< Updated upstream
+=======
+>>>>>>> b97af418ad8b1ee20dc38af1c6a37a8a73784b93
+>>>>>>> Stashed changes
         <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/drawable/calender.xml" value="0.1" />
         <entry key="..\:/Users/vanir/OneDrive/Documents/MatchU/app/src/main/res/drawable/favorite.xml" value="0.1" />
