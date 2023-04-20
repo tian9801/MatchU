@@ -41,6 +41,9 @@ public class CustomBaseAdapter extends BaseAdapter {
         txtView.setText(likedList.get(i).getCollegeName());
         TextView hi = (TextView)convertView.findViewById(R.id.state);
         hi.setText(likedList.get(i).getState());
+        TextView budget = (TextView)convertView.findViewById(R.id.budget);
+        String tuition=String.valueOf(likedList.get(i).getTuition());
+        budget.setText("$" + tuition);
 
             return convertView;
     }
