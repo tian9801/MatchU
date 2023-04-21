@@ -1,5 +1,6 @@
 package com.example.matchu;
 
+import static java.lang.Character.isDigit;
 import static java.lang.Integer.parseInt;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,17 +22,27 @@ import java.util.List;
 
 public class Questionare extends AppCompatActivity {
 
+    private int budget;
+    private String stateInput;
+    private String setting;
+    private int population;
+
+    EditText hi;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare);
         readCollegeData();
+
+        hi = (EditText)findViewById(R.id.budget);
     }
-    public void stepTwo(View view) {
-        Intent intent = new Intent(Questionare.this, Swipe.class);
-        startActivity(intent);
-    }
+
     public static List<College> collegeDB = new ArrayList<>();
+    public static List<College> newColleges = new ArrayList<>();
 
     public static List<College> getCollegeDB() {
         return collegeDB;
@@ -37,6 +50,14 @@ public class Questionare extends AppCompatActivity {
 
     public static void setCollegeDB(List<College> collegeDB) {
         Questionare.collegeDB = collegeDB;
+    }
+
+    public static List<College> getNewColleges() {
+        return newColleges;
+    }
+
+    public static void setNewColleges(List<College> newColleges) {
+        Questionare.newColleges = newColleges;
     }
 
     private void readCollegeData(){
@@ -81,15 +102,15 @@ public class Questionare extends AppCompatActivity {
                     college.setPhoto("na");
                 }
                 //if (tokens[5].length() > 0){
-                  //  college.setACT(Integer.parseInt(tokens[5]));
-              // } else {
-                 //   college.setACT(0);
-               // }
+                //  college.setACT(Integer.parseInt(tokens[5]));
+                // } else {
+                //   college.setACT(0);
+                // }
                 //if (tokens[6].length() > 0){
-                  //  college.setAidPercent(parseInt(tokens[6]));
-              //  } else {
+                //  college.setAidPercent(parseInt(tokens[6]));
+                //  } else {
                 //    college.setAidPercent(0);
-              //  }
+                //  }
                 if (tokens[7].length() > 0){
                     college.setAcceptance(parseInt(tokens[7]));
                 } else {
@@ -142,5 +163,69 @@ public class Questionare extends AppCompatActivity {
             Log.wtf("MyActivity", "Error reading file" + line, e);
             e.printStackTrace();
         }
+
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
+    }
+
+    public String getStateInput() {
+        return stateInput;
+    }
+
+    public void setStateInput(String stateInput) {
+        this.stateInput = stateInput;
+    }
+
+    public String getSetting() {
+        return setting;
+    }
+
+    public void setSetting(String setting) {
+        this.setting = setting;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
+
+    public void stepTwo(View view) {
+        newColleges.clear();
+
+
+        if (hi.equals("")) {
+            Toast.makeText(this, "Please Enter a number for the budget", Toast.LENGTH_SHORT).show();
+
+        }
+
+        else{
+            setBudget(Integer.parseInt(hi.getText().toString()));
+            Log.i("budget", "" + budget);
+
+            for(int i = 0; i<collegeDB.size(); i++){
+                if  (collegeDB.get(i).getTuition()  < budget){
+                    newColleges.add(collegeDB.get(i));
+                }
+            }
+            Log.i("kevin" , "NEW ONE" + newColleges);
+
+
+            Intent intent = new Intent(Questionare.this, Swipe.class);
+            startActivity(intent);
+        }
+
+
+
+
+
     }
 }
