@@ -18,36 +18,36 @@
         android:scaleType="centerCrop"/>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="187dp"
         android:layout_gravity="bottom"
-        android:padding="20dp"
-        android:background="@drawable/gradation_black">
+        android:background="@drawable/gradation_black"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/collegeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:textSize="26sp"/>
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -60,7 +60,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:src="@drawable/ic_baseline_thumb_down_alt_24"
             android:layout_gravity="center"/>
 
     </FrameLayout>
@@ -74,7 +74,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_forward_black_24dp"
+            android:src="@drawable/ic_baseline_thumb_up_alt_24"
             android:layout_gravity="center"/>
 
     </FrameLayout>

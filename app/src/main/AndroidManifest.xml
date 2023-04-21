@@ -16,6 +16,7 @@
         android:theme="@style/Theme.MatchU"
         tools:targetApi="33">
         <activity
+
             android:name=".CustomListView"
             android:exported="false" />
         <activity

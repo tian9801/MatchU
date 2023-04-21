@@ -82,10 +82,6 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
             Integer hi = college.getTuition();
             String money = hi.toString();
 
-            Log.i("poopoo",  "hi"+ url);
-            //url = (url).replace("https:", "");
-
-            Log.i("poopoo", "this is in photo "+ image);
 
 
 
@@ -93,7 +89,7 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
 
             name.setText(college.getCollegeName());
             location.setText(college.getState());
-            price.setText("$" + money);
+            price.setText("$" + money + "/yr");
         }
     }
 
