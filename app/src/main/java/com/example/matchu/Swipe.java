@@ -113,7 +113,7 @@ public class Swipe extends AppCompatActivity {
 
 
 
-    List<College> collegeDB = Questionare.getCollegeDB();
+    List<College> newColleges = Questionare.getNewColleges();
     public static List<College> likedList = new ArrayList<>();
 
 
@@ -278,7 +278,7 @@ public class Swipe extends AppCompatActivity {
 
 
                     Toast.makeText(Swipe.this, "Direction Right", Toast.LENGTH_SHORT).show();
-                   likedList.add(collegeDB.get(i));
+                    likedList.add(newColleges.get(i));
 
                 }
 
@@ -310,7 +310,7 @@ public class Swipe extends AppCompatActivity {
                 }
 
                 i++;
-               Log.i("poop", "hi "+ likedList);
+                Log.i("poop", "hi "+ likedList);
 
 
 
@@ -473,7 +473,7 @@ public class Swipe extends AppCompatActivity {
     private List<College> addList() {
 
 
-        return collegeDB;
+        return newColleges;
 
 
 
