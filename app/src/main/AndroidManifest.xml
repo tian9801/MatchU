@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.matchu">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,9 @@
         android:theme="@style/Theme.MatchU"
         tools:targetApi="33">
         <activity
-
+            android:name=".PopupWindow"
+            android:exported="false" />
+        <activity
             android:name=".CustomListView"
             android:exported="false" />
         <activity
