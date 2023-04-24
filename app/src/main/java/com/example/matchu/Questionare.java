@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +30,9 @@ public class Questionare extends AppCompatActivity {
     private int population;
 
     EditText hi;
+    CheckBox urban;
+    CheckBox suburban;
+    CheckBox rural;
 
 
 
@@ -39,6 +44,10 @@ public class Questionare extends AppCompatActivity {
         readCollegeData();
 
         hi = (EditText)findViewById(R.id.budget);
+        urban=(CheckBox)findViewById(R.id.urban);
+        suburban=(CheckBox)findViewById(R.id.suburban);
+        rural=(CheckBox)findViewById(R.id.rural);
+
     }
 
     public static List<College> collegeDB = new ArrayList<>();
@@ -151,6 +160,11 @@ public class Questionare extends AppCompatActivity {
                 } else {
                     college.setAcademicCalendar("na");
                 }
+                if (tokens[15].length() > 0){
+                    college.setSetting(tokens[15]);
+                } else {
+                    college.setSetting("na");
+                }
 
 
                 collegeDB.add(college);
@@ -198,31 +212,42 @@ public class Questionare extends AppCompatActivity {
         this.population = population;
     }
 
+
     public void stepTwo(View view) {
         newColleges.clear();
+        Log.i("yo", "hi" +  collegeDB);
 
 
-        if (hi.equals("")) {
-            Toast.makeText(this, "Please Enter a number for the budget", Toast.LENGTH_SHORT).show();
+       if(TextUtils.isEmpty(hi.getText().toString())){
+           Toast.makeText(Questionare.this, "Enter a budget!", Toast.LENGTH_SHORT).show();
 
-        }
-
-        else{
+       }
+       else{
             setBudget(Integer.parseInt(hi.getText().toString()));
             Log.i("budget", "" + budget);
 
-            for(int i = 0; i<collegeDB.size(); i++){
-                if  (collegeDB.get(i).getTuition()  < budget){
+            for (int i = 0; i < collegeDB.size(); i++) {
+
+                if (collegeDB.get(i).getTuition() < budget) {
+                    newColleges.add(collegeDB.get(i));
+                }
+                if (rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural")) {
+                    newColleges.add(collegeDB.get(i));
+                }
+                if (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban")) {
+                    newColleges.add(collegeDB.get(i));
+                }
+                if (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban")) {
                     newColleges.add(collegeDB.get(i));
                 }
             }
-            Log.i("kevin" , "NEW ONE" + newColleges);
+            Log.i("kevin", "NEW ONE" + newColleges);
 
 
             Intent intent = new Intent(Questionare.this, Swipe.class);
             startActivity(intent);
-        }
 
+        }
 
 
 
