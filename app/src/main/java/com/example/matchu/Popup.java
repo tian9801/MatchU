@@ -11,12 +11,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.PopupWindow;
 
-public class PopupWindow extends AppCompatActivity {
+public class Popup extends AppCompatActivity {
 
     RelativeLayout parent;
-
-    public PopupWindow(View view, int width, int height, boolean b) {
-    }
 
 
     @Override

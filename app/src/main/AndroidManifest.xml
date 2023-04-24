@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MatchU"
         tools:targetApi="33">
         <activity
-            android:name=".PopupWindow"
+            android:name=".Popup"
             android:exported="false" />
         <activity
             android:name=".CustomListView"
