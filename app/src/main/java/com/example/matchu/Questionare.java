@@ -34,6 +34,13 @@ public class Questionare extends AppCompatActivity {
     CheckBox suburban;
     CheckBox rural;
 
+    CheckBox lessThan;
+    CheckBox tenTo;
+    CheckBox twentyFiveTo;
+    CheckBox fiftyPlus;
+
+    EditText state;
+
 
 
 
@@ -47,6 +54,13 @@ public class Questionare extends AppCompatActivity {
         urban=(CheckBox)findViewById(R.id.urban);
         suburban=(CheckBox)findViewById(R.id.suburban);
         rural=(CheckBox)findViewById(R.id.rural);
+
+        lessThan=(CheckBox)findViewById(R.id.lessthan);
+        tenTo=(CheckBox)findViewById(R.id.tenToTwentyFive);
+        twentyFiveTo=(CheckBox)findViewById(R.id.twentyFiveTo);
+        fiftyPlus = (CheckBox)findViewById(R.id.fiftyPlus);
+
+        state = (EditText) findViewById(R.id.state);
 
     }
 
@@ -216,12 +230,13 @@ public class Questionare extends AppCompatActivity {
     public void stepTwo(View view) {
         newColleges.clear();
         Log.i("yo", "hi" +  collegeDB);
+        int counter = 0;
 
 
        if(TextUtils.isEmpty(hi.getText().toString())){
            Toast.makeText(Questionare.this, "Enter a budget!", Toast.LENGTH_SHORT).show();
-
        }
+
        else{
             setBudget(Integer.parseInt(hi.getText().toString()));
             Log.i("budget", "" + budget);
@@ -229,15 +244,31 @@ public class Questionare extends AppCompatActivity {
             for (int i = 0; i < collegeDB.size(); i++) {
 
                 if (collegeDB.get(i).getTuition() < budget) {
-                    newColleges.add(collegeDB.get(i));
+
+                    if (rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural")) {
+                        counter++;
+                    }
+                    if (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban")) {
+                        counter++;
+                    }
+                    if (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban")) {
+                        counter++;
+                    }
+                    if (lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1)) {
+                        counter++;
+                    }
+                    if (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000)) {
+                        counter++;
+                    }
+                    if (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000)) {
+                        counter++;
+                    }
+                    if (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000) {
+                        counter++;
+                    }
                 }
-                if (rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural")) {
-                    newColleges.add(collegeDB.get(i));
-                }
-                if (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban")) {
-                    newColleges.add(collegeDB.get(i));
-                }
-                if (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban")) {
+
+                if (counter> 3){
                     newColleges.add(collegeDB.get(i));
                 }
             }
