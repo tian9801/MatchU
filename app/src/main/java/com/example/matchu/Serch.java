@@ -13,13 +13,15 @@ import android.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 public class Serch extends AppCompatActivity {
 
-    //when this dummy list works, use the collegesDB from the other class
-    ListView listView;
-    String names[] = {"Chris", "Emma", "Jack", "Shreya", "Liana"};
 
-    ArrayAdapter<String> arrayAdapter;
+    private ListView listView;
+
+
 
     BottomNavigationView nav;
     @Override
@@ -60,33 +62,29 @@ public class Serch extends AppCompatActivity {
 
         });
 
-        listView = findViewById(R.id.listviewcollege);
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
-        listView.setAdapter(arrayAdapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.serchpage, menu);
-        MenuItem collegeItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) collegeItem.getActionView();
-        searchView.setQueryHint("Type here to search a college");
-
+    private void initiateSearch(){
+        SearchView searchView = (SearchView) findViewById(R.id.searchicon);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            //this method is called when the user types in something and enters
-            public boolean onQueryTextSubmit(String query) {
+            public boolean onQueryTextSubmit(String s) {
                 return false;
             }
 
-            //this method is called when the user types in a new character or makes any changes while typing
             @Override
-            public boolean onQueryTextChange(String newText) {
+            public boolean onQueryTextChange(String s) {
+                ArrayList<College> filteredColleges = new ArrayList<College>();
+                for (College college: Questionare.getCollegeDB()){
+                    if(college.getCollegeName().toLowerCase().contains(s.toLowerCase())){
+                        filteredColleges.add(college);
+                    }
+                }
 
-                arrayAdapter.getFilter().filter(newText);
+                CollegeAdapter adapter = new CollegeAdapter(getApplicationContext(), 0, filteredColleges);
+                listView.setAdapter(adapter);
                 return false;
             }
         });
-        return super.onCreateOptionsMenu(menu);
     }
 }
