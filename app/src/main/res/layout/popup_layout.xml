@@ -2,21 +2,126 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#D6D6D6">
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/close"
-        android:textcolor="@color/white"
-        android:text="oksfkjsd"
-        android:background="@color/lightBlue"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
 
-    <TextView
-        android:id="@+id/popup_msg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="insane popup messafe" />
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="KEVIN"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/state4"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/acceptance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/sat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/act"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/aidPercent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/costAfterAid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Button" />
+    </LinearLayout>
+
 
 </RelativeLayout>

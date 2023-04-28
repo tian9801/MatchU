@@ -5,9 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +26,9 @@ public class Favorites extends AppCompatActivity {
     BottomNavigationView nav;
     ListView listView;
     List<College> likedList = Swipe.likedList;
+
+    LinearLayout parent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,4 +74,5 @@ public class Favorites extends AppCompatActivity {
         });
 
     }
+
 }

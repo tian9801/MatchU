@@ -49,14 +49,15 @@
                 android:textStyle="bold"
                 tools:text="$Budget" />
 
-            <ImageView
+            <Button
                 android:id="@+id/heart"
                 android:layout_width="34dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
-                android:scaleType="fitXY"
+                android:contentDescription="@string/back"
 
+                android:scaleType="fitXY"
                 android:src="@drawable/favorite" />
 
 
