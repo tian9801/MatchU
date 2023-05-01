@@ -154,11 +154,11 @@ public class Questionare extends AppCompatActivity {
                 } else {
                     college.setGpa(0.0);
                 }
-                if (tokens[10].length() > 0){
-                    college.setEnrollment(parseInt(tokens[10]));
-                } else {
-                    college.setEnrollment(0);
-                }
+               // if (tokens[10].length() > 0){
+               //     college.setEnrollment(parseInt(tokens[10]));
+              //  } else {
+                 //   college.setEnrollment(0);
+               // }
                 if (tokens[11].length() > 0){
                     college.setSAT(parseInt(tokens[11]));
                 } else {
@@ -183,6 +183,12 @@ public class Questionare extends AppCompatActivity {
                     college.setSetting(tokens[15]);
                 } else {
                     college.setSetting("na");
+                }
+                if (tokens[16].length() > 0){
+                    Log.d("myActivity", "Hi "+college);
+
+                } else {
+                    Log.d("myActivity", "Hi "+college);
                 }
 
 
@@ -241,9 +247,9 @@ public class Questionare extends AppCompatActivity {
        if(TextUtils.isEmpty(hi.getText().toString())){
            Toast.makeText(Questionare.this, "Enter a budget!", Toast.LENGTH_SHORT).show();
        }
-      //  if(TextUtils.isEmpty(state.getText().toString())){
-       //     Toast.makeText(Questionare.this, "Enter a State!", Toast.LENGTH_SHORT).show();
-       // }
+      if(TextUtils.isEmpty(state.getText().toString())){
+           Toast.makeText(Questionare.this, "Enter a State!", Toast.LENGTH_SHORT).show();
+      }
 
        else{
             setBudget(Integer.parseInt(hi.getText().toString()));
@@ -251,7 +257,7 @@ public class Questionare extends AppCompatActivity {
             Log.i("kevin", "hi"+ state.getText());
 
            for (int i = 0; i < collegeDB.size(); i++) {
-
+                    
                             if (collegeDB.get(i).getTuition() < budget) {
 
                                 if (rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural")) {
@@ -278,9 +284,9 @@ public class Questionare extends AppCompatActivity {
                             }
 
 
-                            if (counter > 2) {
+
                                 newColleges.add(collegeDB.get(i));
-                            }
+
                               Log.i("hi", "hi" + newColleges);
                         }
 

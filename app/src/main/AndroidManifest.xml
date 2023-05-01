@@ -37,10 +37,10 @@
             android:name=".Swipe"
             android:exported="false" />
         <activity
-            android:name=".Questionare"
+            android:name=".LogIn"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".Questionare"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
