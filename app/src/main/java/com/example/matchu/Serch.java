@@ -18,7 +18,7 @@ import java.util.Locale;
 
 public class Serch extends AppCompatActivity {
 
-
+    //public static ArrayList <College> collegeListSerch = new ArrayList<College>();
     private ListView listView;
 
 
@@ -28,6 +28,11 @@ public class Serch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_serch);
+        initiateSearch();
+        setupData();
+        setUpList();
+        setUpOnclickListener();
+
         nav = findViewById(R.id.bottomNavigationView);
         nav.setSelectedItemId(R.id.search);
 
@@ -61,6 +66,20 @@ public class Serch extends AppCompatActivity {
             }
 
         });
+
+    }
+
+    private void setupData(){
+        Questionare.getCollegeDB();
+    }
+    private void setUpList(){
+        listView = (ListView) findViewById(R.id.listviewcollege);
+        CollegeAdapter adapter = new CollegeAdapter(getApplicationContext(), 0, Questionare.getCollegeDB());
+        listView.setAdapter(adapter);
+    }
+
+    //might need to set this up for scroll view
+    private void setUpOnclickListener(){
 
     }
 

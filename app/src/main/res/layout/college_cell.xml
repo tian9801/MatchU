@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/nameCollege"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
@@ -23,7 +23,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/state"
+            android:id="@+id/stateCollege"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
@@ -38,7 +38,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/budget"
+                android:id="@+id/budgetCollege"
                 android:layout_width="158dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
