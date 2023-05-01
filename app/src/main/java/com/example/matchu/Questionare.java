@@ -236,14 +236,14 @@ public class Questionare extends AppCompatActivity {
         newColleges.clear();
         Log.i("yo", "hi" +  collegeDB);
         int counter = 0;
-    boolean isTrue = false;
+         boolean isTrue = false;
 
        if(TextUtils.isEmpty(hi.getText().toString())){
            Toast.makeText(Questionare.this, "Enter a budget!", Toast.LENGTH_SHORT).show();
        }
-        if(TextUtils.isEmpty(state.getText().toString())){
-            Toast.makeText(Questionare.this, "Enter a State!", Toast.LENGTH_SHORT).show();
-        }
+      //  if(TextUtils.isEmpty(state.getText().toString())){
+       //     Toast.makeText(Questionare.this, "Enter a State!", Toast.LENGTH_SHORT).show();
+       // }
 
        else{
             setBudget(Integer.parseInt(hi.getText().toString()));
@@ -251,17 +251,6 @@ public class Questionare extends AppCompatActivity {
             Log.i("kevin", "hi"+ state.getText());
 
            for (int i = 0; i < collegeDB.size(); i++) {
-               for (int v = 0; v < fiftyStates.length; v++) {
-                   if (fiftyStates[v].equalsIgnoreCase(collegeDB.get(i).getState()) && collegeDB.get(i).getState().equalsIgnoreCase(state.getText().toString())) {
-                       isTrue = true;
-                   }
-                   Log.i("hi", "hi" + isTrue);
-
-               }
-
-
-
-                   if (isTrue) {
 
                             if (collegeDB.get(i).getTuition() < budget) {
 
@@ -294,7 +283,7 @@ public class Questionare extends AppCompatActivity {
                             }
                               Log.i("hi", "hi" + newColleges);
                         }
-                            isTrue = false;
+
                     }
 
 
@@ -310,5 +299,5 @@ public class Questionare extends AppCompatActivity {
 
 
 
-    }
+
 }
