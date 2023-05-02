@@ -282,9 +282,10 @@ public class Questionare extends AppCompatActivity {
                                 if (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000) {
                                     counter++;
                                 }
-                                if(counter >= 2) {
+
+
                                     newColleges.add(collegeDB.get(i));
-                                }
+
                             }
                             isTrue = false;
                         }
