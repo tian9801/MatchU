@@ -7,20 +7,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class Serch extends AppCompatActivity {
 
-    //public static ArrayList <College> collegeListSerch = new ArrayList<College>();
     private ListView listView;
-
 
 
     BottomNavigationView nav;
@@ -31,7 +33,6 @@ public class Serch extends AppCompatActivity {
         initiateSearch();
         setupData();
         setUpList();
-        setUpOnclickListener();
 
         nav = findViewById(R.id.bottomNavigationView);
         nav.setSelectedItemId(R.id.search);
@@ -78,10 +79,6 @@ public class Serch extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
-    //might need to set this up for scroll view
-    private void setUpOnclickListener(){
-
-    }
 
     private void initiateSearch(){
         SearchView searchView = (SearchView) findViewById(R.id.searchicon);

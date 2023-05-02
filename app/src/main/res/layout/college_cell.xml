@@ -48,6 +48,13 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 tools:text="$Budget" />
+
+            <Button
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:id="@+id/heartCollege"
+                />
+
         </LinearLayout>
 
         <View
