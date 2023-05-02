@@ -260,7 +260,7 @@ public class Questionare extends AppCompatActivity {
                     if(isTrue) {
                         Log.i("check", "hi" + collegeDB.get(i));
                             if (collegeDB.get(i).getTuition() < budget) {
-
+                                counter= 0;
                                 if (rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural")) {
                                     counter++;
                                 }
@@ -282,13 +282,14 @@ public class Questionare extends AppCompatActivity {
                                 if (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000) {
                                     counter++;
                                 }
+                                if(counter >= 2) {
+                                    newColleges.add(collegeDB.get(i));
+                                }
                             }
                             isTrue = false;
                         }
-                        if(counter <= 2) {
-                            newColleges.add(collegeDB.get(i));
-                        }
-                        counter= 0;
+
+
                         Log.i("hi", "hi" + newColleges);
 
                     }
