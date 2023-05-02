@@ -44,28 +44,26 @@ public class Questionare extends AppCompatActivity {
     String[] fiftyStates;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare);
         readCollegeData();
 
-        hi = (EditText)findViewById(R.id.budget);
-        urban=(CheckBox)findViewById(R.id.urban);
-        suburban=(CheckBox)findViewById(R.id.suburban);
-        rural=(CheckBox)findViewById(R.id.rural);
+        hi = (EditText) findViewById(R.id.budget);
+        urban = (CheckBox) findViewById(R.id.urban);
+        suburban = (CheckBox) findViewById(R.id.suburban);
+        rural = (CheckBox) findViewById(R.id.rural);
 
-        lessThan=(CheckBox)findViewById(R.id.lessthan);
-        tenTo=(CheckBox)findViewById(R.id.tenToTwentyFive);
-        twentyFiveTo=(CheckBox)findViewById(R.id.twentyFiveTo);
-        fiftyPlus = (CheckBox)findViewById(R.id.fiftyPlus);
+        lessThan = (CheckBox) findViewById(R.id.lessthan);
+        tenTo = (CheckBox) findViewById(R.id.tenToTwentyFive);
+        twentyFiveTo = (CheckBox) findViewById(R.id.twentyFiveTo);
+        fiftyPlus = (CheckBox) findViewById(R.id.fiftyPlus);
 
         state = (EditText) findViewById(R.id.state);
-        fiftyStates = new String[] { "AL", "AK", "AZ" , "AR", "CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME"
-               , "MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN", "TX"
-                ,"UT" ,"VT","VA","WA","WV","WI","WY" };
+        fiftyStates = new String[]{"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME"
+                , "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX"
+                , "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
 
     }
 
@@ -88,7 +86,7 @@ public class Questionare extends AppCompatActivity {
         Questionare.newColleges = newColleges;
     }
 
-    private void readCollegeData(){
+    private void readCollegeData() {
         InputStream is = getResources().openRawResource(R.raw.collegedata);
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(is, Charset.forName("UTF-8"))
@@ -104,27 +102,27 @@ public class Questionare extends AppCompatActivity {
                 String[] tokens = line.split(",");
                 //read the data
                 College college = new College();
-                if (tokens[0].length() > 0){
+                if (tokens[0].length() > 0) {
                     college.setCollegeName(tokens[0]);
                 } else {
                     college.setCollegeName("na");
                 }
-                if (tokens[1].length() > 0){
+                if (tokens[1].length() > 0) {
                     college.setAliasName(tokens[1]);
                 } else {
                     college.setAliasName("na");
                 }
-                if (tokens[2].length() > 0){
+                if (tokens[2].length() > 0) {
                     college.setState(tokens[2]);
                 } else {
                     college.setState("na");
                 }
-                if (tokens[3].length() > 0){
+                if (tokens[3].length() > 0) {
                     college.setCity(tokens[3]);
                 } else {
                     college.setCity("na");
                 }
-                if (tokens[4].length() > 0){
+                if (tokens[4].length() > 0) {
                     college.setPhoto(tokens[4]);
                 } else {
                     college.setPhoto("na");
@@ -139,66 +137,65 @@ public class Questionare extends AppCompatActivity {
                 //  } else {
                 //    college.setAidPercent(0);
                 //  }
-                if (tokens[7].length() > 0){
+                if (tokens[7].length() > 0) {
                     college.setAcceptance(parseInt(tokens[7]));
                 } else {
                     college.setAcceptance(0);
                 }
-                if (tokens[8].length() > 0){
+                if (tokens[8].length() > 0) {
                     college.setTuition(parseInt(tokens[8]));
                 } else {
                     college.setTuition(0);
                 }
-                if (tokens[9].length() > 0){
+                if (tokens[9].length() > 0) {
                     college.setGpa(Double.parseDouble(tokens[9]));
                 } else {
                     college.setGpa(0.0);
                 }
-               // if (tokens[10].length() > 0){
-               //     college.setEnrollment(parseInt(tokens[10]));
-              //  } else {
-                 //   college.setEnrollment(0);
-               // }
-                if (tokens[11].length() > 0){
+                // if (tokens[10].length() > 0){
+                //     college.setEnrollment(parseInt(tokens[10]));
+                //  } else {
+                //   college.setEnrollment(0);
+                // }
+                if (tokens[11].length() > 0) {
                     college.setSAT(parseInt(tokens[11]));
                 } else {
                     college.setSAT(0);
                 }
-                if (tokens[12].length() > 0){
+                if (tokens[12].length() > 0) {
                     college.setCostAfterAid(parseInt(tokens[12]));
                 } else {
                     college.setCostAfterAid(0);
                 }
-                if (tokens[13].length() > 0){
+                if (tokens[13].length() > 0) {
                     college.setType(tokens[13]);
                 } else {
                     college.setType("na");
                 }
-                if (tokens[14].length() > 0){
+                if (tokens[14].length() > 0) {
                     college.setAcademicCalendar(tokens[14]);
                 } else {
                     college.setAcademicCalendar("na");
                 }
-                if (tokens[15].length() > 0){
+                if (tokens[15].length() > 0) {
                     college.setSetting(tokens[15]);
                 } else {
                     college.setSetting("na");
                 }
-                if (tokens[16].length() > 0){
-                    Log.d("myActivity", "Hi "+college);
+                if (tokens[16].length() > 0) {
+                    Log.d("myActivity", "Hi " + college);
 
                 } else {
-                    Log.d("myActivity", "Hi "+college);
+                    Log.d("myActivity", "Hi " + college);
                 }
 
 
                 collegeDB.add(college);
-                Log.d("myActivity", "Hi "+college);
-
+                Log.d("myActivity", "Hi " + college);
 
 
             }
-        }catch(IOException e){
+        } catch (IOException e) {
             Log.wtf("MyActivity", "Error reading file" + line, e);
             e.printStackTrace();
         }
@@ -240,24 +237,28 @@ public class Questionare extends AppCompatActivity {
 
     public void stepTwo(View view) {
         newColleges.clear();
-        Log.i("yo", "hi" +  collegeDB);
+        Log.i("yo", "hi" + collegeDB);
         int counter = 0;
-         boolean isTrue = false;
+        boolean isTrue = false;
 
-       if(TextUtils.isEmpty(hi.getText().toString())){
-           Toast.makeText(Questionare.this, "Enter a budget!", Toast.LENGTH_SHORT).show();
-       }
-      if(TextUtils.isEmpty(state.getText().toString())){
-           Toast.makeText(Questionare.this, "Enter a State!", Toast.LENGTH_SHORT).show();
-      }
-
-       else{
+        if (TextUtils.isEmpty(hi.getText().toString())) {
+            Toast.makeText(Questionare.this, "Enter a budget!", Toast.LENGTH_SHORT).show();
+        }
+        if (TextUtils.isEmpty(state.getText().toString())) {
+            Toast.makeText(Questionare.this, "Enter a State!", Toast.LENGTH_SHORT).show();
+        } else {
             setBudget(Integer.parseInt(hi.getText().toString()));
             Log.i("budget", "" + budget);
-            Log.i("kevin", "hi"+ state.getText());
+            Log.i("kevin", "hi" + state.getText());
 
-           for (int i = 0; i < collegeDB.size(); i++) {
-                    
+            for (int i = 0; i < collegeDB.size(); i++) {
+                for (int v = 0; v < fiftyStates.length; v++) {
+                    if (fiftyStates[v].equalsIgnoreCase(collegeDB.get(i).getState()) && collegeDB.get(i).getState().equalsIgnoreCase(state.getText().toString())) {
+                        isTrue = true;
+                        ;
+                    }
+                    if(isTrue) {
+                        Log.i("check", "hi" + collegeDB.get(i));
                             if (collegeDB.get(i).getTuition() < budget) {
 
                                 if (rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural")) {
@@ -282,28 +283,27 @@ public class Questionare extends AppCompatActivity {
                                     counter++;
                                 }
                             }
-
-
-
-                                newColleges.add(collegeDB.get(i));
-
-                              Log.i("hi", "hi" + newColleges);
+                            isTrue = false;
                         }
+                        if(counter <= 2) {
+                            newColleges.add(collegeDB.get(i));
+                        }
+                        counter= 0;
+                        Log.i("hi", "hi" + newColleges);
 
                     }
 
+                }
 
 
-            Log.i("kevin", "NEW ONE" + newColleges);
+                Log.i("kevin", "NEW ONE" + newColleges);
 
 
-            Intent intent = new Intent(Questionare.this, Swipe.class);
-            startActivity(intent);
+                Intent intent = new Intent(Questionare.this, Swipe.class);
+                startActivity(intent);
+
+            }
+
 
         }
-
-
-
-
-
-}
+    }
