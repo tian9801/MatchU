@@ -15,48 +15,54 @@
 
         android:layout_marginBottom="10dp"
         android:orientation="vertical"
-        android:padding="25dp">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="308dp"
-            android:layout_height="wrap_content"
+            android:layout_width="338dp"
+            android:layout_height="87dp"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/gloock_regular"
+
             android:text="KEVIN"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/state4"
-            android:layout_width="308dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
+            android:fontFamily="@font/poppins_regular"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/acceptance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
-            android:id="@+id/city"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/gpa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/sat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,9 +70,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/act"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,9 +81,21 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/enrollment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="12dp" />
+
+        <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/aidPercent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,9 +103,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,9 +114,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,9 +125,21 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/academic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="KEVIN IS COOL"
+            android:textSize="12dp" />
+
+        <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/costAfterAid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,22 +147,16 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="KEVIN IS COOL"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <Button
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:text="Button" />
     </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/popup_msg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="insane popup messafe" />
 
 
 </RelativeLayout>

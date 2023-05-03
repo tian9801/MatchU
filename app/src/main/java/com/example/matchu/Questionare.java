@@ -282,7 +282,15 @@ public class Questionare extends AppCompatActivity {
 
 
                             }
+<<<<<<< Updated upstream
                             isTrue = false;
+=======
+
+
+                                newColleges.add(collegeDB.get(i));
+
+                              Log.i("hi", "hi" + newColleges);
+>>>>>>> Stashed changes
                         }
 
 

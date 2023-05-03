@@ -68,23 +68,42 @@ public class CustomBaseAdapter extends BaseAdapter {
                 int height = LinearLayout.LayoutParams.WRAP_CONTENT;
 
 
-                TextView state = (TextView)ok.findViewById(R.id.state4);
-                state.setText("State: " + String.valueOf(likedList.get(i).getState()));
+                TextView name = (TextView)ok.findViewById(R.id.name);
+                name.setText(likedList.get(i).getCollegeName());
 
-                TextView city = (TextView)ok.findViewById(R.id.city);
-                city.setText("City: " + String.valueOf(likedList.get(i).getCity()));
+                TextView state = (TextView)ok.findViewById(R.id.state4);
+                state.setText("Location: " + String.valueOf(likedList.get(i).getCity()) + ", " + String.valueOf(likedList.get(i).getState()));
+
+                TextView acceptance = (TextView)ok.findViewById(R.id.acceptance);
+                acceptance.setText("Acceptance rate: " + String.valueOf(likedList.get(i).getAcceptance()) + "%");
+
+                TextView gpa = (TextView)ok.findViewById(R.id.gpa);
+                gpa.setText("Average GPA: " + String.valueOf(likedList.get(i).getGpa()));
+
 
                 TextView sat = (TextView)ok.findViewById(R.id.sat);
-                sat.setText("SAT: " + String.valueOf(likedList.get(i).getSAT()));
+                sat.setText("Average SAT: " + String.valueOf(likedList.get(i).getSAT()));
 
                 TextView act = (TextView)ok.findViewById(R.id.act);
-                act.setText("ACT: " + String.valueOf(likedList.get(i).getACT()));
+                act.setText("Average ACT: " + String.valueOf(likedList.get(i).getACT()));
+
+                TextView type = (TextView)ok.findViewById(R.id.type);
+                type.setText("Type: " + String.valueOf(likedList.get(i).getType()));
+
+                TextView academic = (TextView)ok.findViewById(R.id.academic);
+                academic.setText("Average ACT: " + String.valueOf(likedList.get(i).getAcademicCalendar()));
+
+                TextView setting = (TextView)ok.findViewById(R.id.setting);
+                setting.setText("Setting: " + String.valueOf(likedList.get(i).getSetting()));
+
+                TextView enrollment = (TextView)ok.findViewById(R.id.enrollment);
+                enrollment.setText("Enrollment: " + String.valueOf(likedList.get(i).getEnrollment()));
 
                 TextView aidPercent = (TextView)ok.findViewById(R.id.aidPercent);
                 aidPercent.setText("Aid percent: " + String.valueOf(likedList.get(i).getAidPercent()));
 
                 TextView costAfterAid = (TextView)ok.findViewById(R.id.costAfterAid);
-                costAfterAid.setText("Cost after aid" + String.valueOf(likedList.get(i).getCostAfterAid()));
+                costAfterAid.setText("Cost after aid: $" + String.valueOf(likedList.get(i).getCostAfterAid()));
 
 
 
@@ -93,7 +112,6 @@ public class CustomBaseAdapter extends BaseAdapter {
 
                 popupWindow.showAtLocation(v, Gravity.CENTER, 0,0);
 
-                body.setText(R.string.message);
                 close.setOnClickListener(view -> {
                     popupWindow.dismiss();
 
