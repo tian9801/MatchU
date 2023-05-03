@@ -137,52 +137,52 @@ public class Questionare extends AppCompatActivity {
                 //  } else {
                 //    college.setAidPercent(0);
                 //  }
-                if (tokens[7].length() > 0) {
-                    college.setAcceptance(parseInt(tokens[7]));
+                if (tokens[8].length() > 0) {
+                    college.setAcceptance(parseInt(tokens[8]));
                 } else {
                     college.setAcceptance(0);
                 }
-                if (tokens[8].length() > 0) {
-                    college.setTuition(parseInt(tokens[8]));
+                if (tokens[9].length() > 0) {
+                    college.setTuition(parseInt(tokens[9]));
                 } else {
                     college.setTuition(0);
                 }
-                if (tokens[9].length() > 0) {
-                    college.setGpa(Double.parseDouble(tokens[9]));
+                if (tokens[10].length() > 0) {
+                    college.setGpa(Double.parseDouble(tokens[10]));
                 } else {
                     college.setGpa(0.0);
                 }
-                // if (tokens[10].length() > 0){
-                //     college.setEnrollment(parseInt(tokens[10]));
-                //  } else {
-                //   college.setEnrollment(0);
-                // }
-                if (tokens[11].length() > 0) {
-                    college.setSAT(parseInt(tokens[11]));
+                 if (tokens[11].length() > 0){
+                     college.setEnrollment(parseInt(tokens[11]));
+                  } else {
+                   college.setEnrollment(0);
+                 }
+                if (tokens[12].length() > 0) {
+                    college.setSAT(parseInt(tokens[12]));
                 } else {
                     college.setSAT(0);
                 }
-                if (tokens[12].length() > 0) {
-                    college.setCostAfterAid(parseInt(tokens[12]));
+                if (tokens[13].length() > 0) {
+                    college.setCostAfterAid(parseInt(tokens[13]));
                 } else {
                     college.setCostAfterAid(0);
                 }
-                if (tokens[13].length() > 0) {
-                    college.setType(tokens[13]);
+                if (tokens[14].length() > 0) {
+                    college.setType(tokens[14]);
                 } else {
                     college.setType("na");
                 }
-                if (tokens[14].length() > 0) {
-                    college.setAcademicCalendar(tokens[14]);
+                if (tokens[15].length() > 0) {
+                    college.setAcademicCalendar(tokens[15]);
                 } else {
                     college.setAcademicCalendar("na");
                 }
-                if (tokens[15].length() > 0) {
-                    college.setSetting(tokens[15]);
+                if (tokens[16].length() > 0) {
+                    college.setSetting(tokens[16]);
                 } else {
                     college.setSetting("na");
                 }
-                if (tokens[16].length() > 0) {
+                if (tokens[17].length() > 0) {
                     Log.d("myActivity", "Hi " + college);
 
                 } else {
@@ -240,6 +240,7 @@ public class Questionare extends AppCompatActivity {
         Log.i("yo", "hi" + collegeDB);
         int counter = 0;
         boolean isTrue = false;
+        boolean pref = false;
 
         if (TextUtils.isEmpty(hi.getText().toString())) {
             Toast.makeText(Questionare.this, "Enter a budget!", Toast.LENGTH_SHORT).show();
@@ -252,46 +253,40 @@ public class Questionare extends AppCompatActivity {
             Log.i("kevin", "hi" + state.getText());
 
             for (int i = 0; i < collegeDB.size(); i++) {
+
                 for (int v = 0; v < fiftyStates.length; v++) {
                     if (fiftyStates[v].equalsIgnoreCase(collegeDB.get(i).getState()) && collegeDB.get(i).getState().equalsIgnoreCase(state.getText().toString())) {
                         isTrue = true;
-                        ;
+
                     }
                     if(isTrue) {
                         Log.i("check", "hi" + collegeDB.get(i));
                             if (collegeDB.get(i).getTuition() < budget) {
-                                counter= 0;
-                                if (rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural")) {
-                                    counter++;
-                                }
-                                if (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban")) {
-                                    counter++;
-                                }
-                                if (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban")) {
-                                    counter++;
-                                }
-                                if (lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1)) {
-                                    counter++;
-                                }
-                                if (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000)) {
-                                    counter++;
-                                }
-                                if (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000)) {
-                                    counter++;
-                                }
-                                if (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000) {
-                                    counter++;
-                                }
 
-
+                                if ((rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural"))
+                                   ||( urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban"))
+                                || (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban"))) {
                                     newColleges.add(collegeDB.get(i));
+                                }
+                                if ((lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1))
+                                  || (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000))
+                                || (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000))
+                                 || (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000)) {
+                                    newColleges.add(collegeDB.get(i));
+                                }
+
+
+
+
+                                Log.i("v", "hi" + newColleges);
+
 
                             }
                             isTrue = false;
                         }
 
 
-                        Log.i("hi", "hi" + newColleges);
+
 
                     }
 
