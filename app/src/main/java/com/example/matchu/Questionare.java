@@ -261,7 +261,7 @@ public class Questionare extends AppCompatActivity {
                     }
                     if (isTrue) {
                         Log.i("check", "hi" + collegeDB.get(i));
-                        if (collegeDB.get(i).getTuition() < budget) {
+                        if (collegeDB.get(i).getTuition() <= budget) {
 
                             if ((rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural"))
                                     || (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban"))
@@ -276,8 +276,8 @@ public class Questionare extends AppCompatActivity {
                                 newColleges.add(collegeDB.get(i));
                             }
 
+                           
 
-                            Log.i("v", "hi" + newColleges);
 
 
                         }
@@ -285,8 +285,6 @@ public class Questionare extends AppCompatActivity {
 
                         isTrue = false;
 
-
-                        Log.i("hi", "hi" + newColleges);
 
                     }
 
@@ -296,7 +294,6 @@ public class Questionare extends AppCompatActivity {
             }
 
 
-            Log.i("kevin", "NEW ONE" + newColleges);
 
 
             Intent intent = new Intent(Questionare.this, Swipe.class);
