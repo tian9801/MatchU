@@ -46,7 +46,10 @@ public class CustomBaseAdapter extends BaseAdapter {
     public View getView(int i, View convertView, ViewGroup viewGroup) {
         Log.d("TAG", "in the getview");
         //all of the text displaying in the listView
+
         convertView = inflater.inflate(R.layout.activity_custom_list_view, null);
+
+
         TextView txtView = (TextView)convertView.findViewById(R.id.textView);
         txtView.setText(likedList.get(i).getCollegeName());
         TextView hi = (TextView)convertView.findViewById(R.id.state);
