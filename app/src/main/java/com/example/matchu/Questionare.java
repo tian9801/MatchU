@@ -152,11 +152,11 @@ public class Questionare extends AppCompatActivity {
                 } else {
                     college.setGpa(0.0);
                 }
-                 if (tokens[11].length() > 0){
-                     college.setEnrollment(parseInt(tokens[11]));
-                  } else {
-                   college.setEnrollment(0);
-                 }
+                if (tokens[11].length() > 0) {
+                    college.setEnrollment(parseInt(tokens[11]));
+                } else {
+                    college.setEnrollment(0);
+                }
                 if (tokens[12].length() > 0) {
                     college.setSAT(parseInt(tokens[12]));
                 } else {
@@ -259,62 +259,52 @@ public class Questionare extends AppCompatActivity {
                         isTrue = true;
 
                     }
-                    if(isTrue) {
+                    if (isTrue) {
                         Log.i("check", "hi" + collegeDB.get(i));
-                            if (collegeDB.get(i).getTuition() < budget) {
+                        if (collegeDB.get(i).getTuition() < budget) {
 
-                                if ((rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural"))
-                                   ||( urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban"))
-                                || (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban"))) {
-                                    newColleges.add(collegeDB.get(i));
-                                }
-
-                                if ((lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1))
-                                  || (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000))
-                                || (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000))
-                                 || (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000)) {
-                                    newColleges.add(collegeDB.get(i));
-                                }
-
-
-
-
-                                Log.i("v", "hi" + newColleges);
-
-
-                            }
-
-                            isTrue = false;
-
-
+                            if ((rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural"))
+                                    || (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban"))
+                                    || (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban"))) {
                                 newColleges.add(collegeDB.get(i));
                             }
 
-                            isTrue = false;
+                            if ((lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1))
+                                    || (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000))
+                                    || (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000))
+                                    || (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000)) {
+                                newColleges.add(collegeDB.get(i));
+                            }
 
 
+                            Log.i("v", "hi" + newColleges);
 
-
-                              Log.i("hi", "hi" + newColleges);
 
                         }
 
 
+                        isTrue = false;
 
+
+                        Log.i("hi", "hi" + newColleges);
 
                     }
 
+
                 }
-
-
-                Log.i("kevin", "NEW ONE" + newColleges);
-
-
-                Intent intent = new Intent(Questionare.this, Swipe.class);
-                startActivity(intent);
 
             }
 
 
+            Log.i("kevin", "NEW ONE" + newColleges);
+
+
+            Intent intent = new Intent(Questionare.this, Swipe.class);
+            startActivity(intent);
+
         }
+
+
     }
+}
+
