@@ -16,6 +16,12 @@
         android:theme="@style/Theme.MatchU"
         tools:targetApi="33">
         <activity
+            android:name=".WeekViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventEditActivity"
+            android:exported="false" />
+        <activity
             android:name=".Popup"
             android:exported="false" />
         <activity
