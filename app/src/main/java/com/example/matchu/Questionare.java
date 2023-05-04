@@ -266,14 +266,14 @@ public class Questionare extends AppCompatActivity {
                             if ((rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural"))
                                     || (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban"))
                                     || (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban"))) {
-                                newColleges.add(collegeDB.get(i));
-                            }
 
-                            if ((lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1))
-                                    || (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000))
-                                    || (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000))
-                                    || (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000)) {
-                                newColleges.add(collegeDB.get(i));
+
+                                if ((lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1))
+                                        || (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000))
+                                        || (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000))
+                                        || (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000)) {
+                                    newColleges.add(collegeDB.get(i));
+                                }
                             }
 
                            
