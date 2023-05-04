@@ -268,6 +268,7 @@ public class Questionare extends AppCompatActivity {
                                 || (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban"))) {
                                     newColleges.add(collegeDB.get(i));
                                 }
+
                                 if ((lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1))
                                   || (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000))
                                 || (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000))
@@ -282,15 +283,20 @@ public class Questionare extends AppCompatActivity {
 
 
                             }
-<<<<<<< Updated upstream
+
                             isTrue = false;
-=======
 
 
                                 newColleges.add(collegeDB.get(i));
+                            }
+
+                            isTrue = false;
+
+
+
 
                               Log.i("hi", "hi" + newColleges);
->>>>>>> Stashed changes
+
                         }
 
 
