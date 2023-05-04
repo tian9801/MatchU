@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Calendar">
+    tools:context=".WeekViewActivity">
+
 
 
     <LinearLayout
@@ -20,7 +21,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="previousMonthAction"
+            android:onClick="previousWeekAction"
             android:text="@string/back"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -47,7 +48,7 @@
             android:textColor="@color/white"
 
             android:textStyle="bold"
-            android:onClick="nextMonthAction"
+            android:onClick="nextWeekAction"
             android:textSize="20sp"
             tools:ignore="OnClick" />
 
@@ -129,48 +130,61 @@
     </LinearLayout>
 
 
-
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="50dp"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:onClick="newEventAction"
+        android:text="New Event"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+
+        />
+
+    <ListView
+        android:id = "@+id/eventListView"
+        android:layout_width = "match_parent"
+        android:layout_height= "100dp"
+        />
+
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="357dp"
+        android:layout_height="match_parent"
         android:background="@color/white"
         tools:context=".Calendar">
 
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_gravity='center'
-
-            android:onClick="weeklyAction"
-
-            android:text="Weekly"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.539"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.097"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintVertical_bias="1.0"
+            app:menu="@menu/navbar"
+            tools:ignore="DuplicateIds" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/navbar" />
+
 
 
 </LinearLayout>
+
