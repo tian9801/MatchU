@@ -274,6 +274,11 @@ public class Questionare extends AppCompatActivity {
                                  }
                             }
 
+                            if (newColleges == null) {
+                                Log.i("v", "hi");
+
+                                Toast.makeText(Questionare.this, "Nothing fit your prefrences, go to settings to change them", Toast.LENGTH_LONG).show();
+                            }
 
                             Log.i("v", "hi" + newColleges);
 
