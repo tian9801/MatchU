@@ -47,8 +47,8 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
         context = holder.itemView.getContext();
         College c = items.get(position);
         holder.setData(items.get(position), holder);
-        Glide.with(context).load(c.getPhoto()).placeholder(R.drawable.steph).
-                error(R.drawable.steph).override(1000,1000).centerCrop().into(holder.image);
+        Glide.with(context).load(c.getPhoto()).placeholder(R.drawable.noimage).
+                error(R.drawable.noimage).override(1000,1000).centerCrop().into(holder.image);
 
     }
 
