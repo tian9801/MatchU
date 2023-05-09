@@ -4,6 +4,7 @@ import static com.example.matchu.CalendarUtils.daysInMonthArray;
 import static com.example.matchu.CalendarUtils.daysInWeekArray;
 import static com.example.matchu.CalendarUtils.monthYearfromDate;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -14,10 +15,13 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -27,6 +31,10 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     private RecyclerView calendarRecyclerView;
     private ListView eventListView;
 
+
+    BottomNavigationView nav;
+
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,40 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         CalendarUtils.selectedDate = LocalDate.now();
         initWidgets();
         setWeekView();
+
+        nav = findViewById(R.id.bottomNavigationView);
+        nav.setSelectedItemId(R.id.calender);
+
+        nav.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()) {
+                    case R.id.calender:
+                        return true;
+
+                    case R.id.favorites:
+                        startActivity(new Intent(getApplicationContext(),Favorites.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(),Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.search:
+                        startActivity(new Intent(getApplicationContext(),Serch.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.swipe:
+                        startActivity(new Intent(getApplicationContext(),Swipe.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+
+        });
     }
     private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);

@@ -11,6 +11,10 @@
     <color name="darkGreen">#063008</color>
     <color name="lightBlue">#7488C3</color>
     <color name="lightGreen">#679869</color>
+    <color name="darkGrey">#333533</color>
+    <color name="lightGray">#EEE</color>
+
+
 
 
 </resources>

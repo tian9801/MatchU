@@ -14,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Settings extends AppCompatActivity {
 
+
     BottomNavigationView nav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,13 +63,15 @@ public class Settings extends AppCompatActivity {
 
         LogIn.firebaseHelper.logOutUser();
 
-        Log.i("HELL", "user logged out");
+        Log.i("HELLO", "user logged out");
 
         Intent intent = new Intent(Settings.this, LogIn.class);
 
         startActivity(intent);
 
     }
+
+
 
 }
 
