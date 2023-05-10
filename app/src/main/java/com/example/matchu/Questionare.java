@@ -258,7 +258,7 @@ public class Questionare extends AppCompatActivity {
         if (TextUtils.isEmpty(state.getText().toString())) {
             Toast.makeText(Questionare.this, "Enter a State!", Toast.LENGTH_SHORT).show();
         } else {
-            setBudget(Integer.parseInt(hi.getText().toString()));
+            setBudget(Integer. parseInt(hi.getText().toString()));
             Log.i("budget", "" + budget);
             Log.i("kevin", "hi" + state.getText());
 

@@ -1,6 +1,8 @@
 package com.example.matchu;
 import static androidx.core.content.ContextCompat.startActivity;
 
+import static com.example.matchu.Swipe.likedList;
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
@@ -47,14 +49,13 @@ public class FirebaseHelper {
     private static String uid = null;      // var will be updated for currently signed in user
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private ArrayList<College> myColleges;
+
 
 
     public FirebaseHelper() {
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-        myColleges = new ArrayList<>();
     }
 
 
@@ -80,7 +81,7 @@ public class FirebaseHelper {
             readData(new FirestoreCallback() {
                 @Override
                 public void onCallback(ArrayList<College> collegeList) {
-                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + collegeList.toString());
+                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + Swipe.likedList.toString());
                 }
             });
         }
@@ -117,20 +118,20 @@ public class FirebaseHelper {
         addData(c, new FirestoreCallback() {
             @Override
             public void onCallback(ArrayList<College> myList) {
-                Log.i(TAG, "Inside addData, onCallback :" + myColleges.toString());
+                Log.i(TAG, "Inside addData, onCallback :" + likedList.toString());
             }
         });
     }
 
 
     private void addData(College c, FirestoreCallback firestoreCallback) {
-        db.collection("users").document(uid).collection("myCollegeList")
+        db.collection("users").document(uid).collection("likedList")
                 .add(c)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         // This will set the docID key for the Memory that was just added.
-                        db.collection("users").document(uid).collection("myCollegeList").
+                        db.collection("users").document(uid).collection("likedList").
                                 document(documentReference.getId()).update("docID", documentReference.getId());
                         Log.i(TAG, "just added " + c.getCollegeName());
                         readData(firestoreCallback);
@@ -145,9 +146,7 @@ public class FirebaseHelper {
     }
 
 
-    public ArrayList<College> getMemoryArrayList() {
-        return myColleges;
-    }
+
 
 
 
@@ -159,26 +158,26 @@ certain things from occurring until after the onSuccess is finished.
 */
 
     private void readData(FirestoreCallback firestoreCallback) {
-        myColleges.clear();        // empties the AL so that it can get a fresh copy of data
-        db.collection("users").document(uid).collection("myCollegeList")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (DocumentSnapshot doc: task.getResult()) {
-                                College college = doc.toObject(College.class);
-                                myColleges.add(college);
-                            }
+        if (likedList != null) {   // empties the AL so that it can get a fresh copy of data
+            db.collection("users").document(uid).collection("likedList")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for (DocumentSnapshot doc : task.getResult()) {
+                                    College college = doc.toObject(College.class);
+                                    likedList.add(college);
+                                }
 
-                            Log.i(TAG, "Success reading data: "+ myColleges.toString());
-                            firestoreCallback.onCallback(myColleges);
+                                Log.i(TAG, "Success reading data: " + likedList.toString());
+                                firestoreCallback.onCallback(likedList);
+                            } else {
+                                Log.d(TAG, "Error getting documents: " + task.getException());
+                            }
                         }
-                        else {
-                            Log.d(TAG, "Error getting documents: " + task.getException());
-                        }
-                    }
-                });
+                    });
+        }
     }
 
 

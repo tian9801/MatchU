@@ -114,7 +114,7 @@ public class Swipe extends AppCompatActivity {
 
 
     List<College> newColleges = Questionare.getNewColleges();
-    public static List<College> likedList = new ArrayList<>();
+    public static ArrayList<College> likedList = new ArrayList<>();
 
 
 
