@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Questionare extends AppCompatActivity {
@@ -40,8 +41,11 @@ public class Questionare extends AppCompatActivity {
     CheckBox fiftyPlus;
 
     EditText state;
+    EditText state5;
+    EditText state2;
 
     String[] fiftyStates;
+    String[] states;
 
 
     @Override
@@ -61,6 +65,9 @@ public class Questionare extends AppCompatActivity {
         fiftyPlus = (CheckBox) findViewById(R.id.fiftyPlus);
 
         state = (EditText) findViewById(R.id.state);
+        state5 = (EditText) findViewById(R.id.state2);
+        state2 = (EditText) findViewById(R.id.state5);
+
         fiftyStates = new String[]{"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME"
                 , "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX"
                 , "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
@@ -242,6 +249,9 @@ public class Questionare extends AppCompatActivity {
         boolean isTrue = false;
         boolean pref = false;
 
+        states = new String[]{state.getText().toString(),state5.getText().toString(),state2.getText().toString()};
+        Log.i("statoes", "hi" + Arrays.toString(states));
+
         if (TextUtils.isEmpty(hi.getText().toString())) {
             Toast.makeText(Questionare.this, "Enter a budget!", Toast.LENGTH_SHORT).show();
         }
@@ -253,42 +263,39 @@ public class Questionare extends AppCompatActivity {
             Log.i("kevin", "hi" + state.getText());
 
             for (int i = 0; i < collegeDB.size(); i++) {
-
                 for (int v = 0; v < fiftyStates.length; v++) {
-                    if (fiftyStates[v].equalsIgnoreCase(collegeDB.get(i).getState()) && collegeDB.get(i).getState().equalsIgnoreCase(state.getText().toString())) {
-                        isTrue = true;
+                    for (int x = 0; x < states.length; x++) {
+                        if (fiftyStates[v].equalsIgnoreCase(collegeDB.get(i).getState()) && collegeDB.get(i).getState().equalsIgnoreCase(states[x])) {
+                            isTrue = true;
 
-                    }
-                    if (isTrue) {
-                        Log.i("check", "hi" + collegeDB.get(i));
-                        if (collegeDB.get(i).getTuition() <= budget) {
+                        }
+                        if (isTrue) {
+                            Log.i("check", "hi" + collegeDB.get(i));
+                            if (collegeDB.get(i).getTuition() <= budget) {
 
-                            if ((rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural"))
-                                    || (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban"))
-                                    || (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban"))) {
+                                if ((rural.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("rural"))
+                                        || (urban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("urban"))
+                                        || (suburban.isChecked() && collegeDB.get(i).getSetting().equalsIgnoreCase("suburban"))) {
 
 
-                                if ((lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1))
-                                        || (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000))
-                                        || (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000))
-                                        || (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000)) {
-                                    newColleges.add(collegeDB.get(i));
+                                    if ((lessThan.isChecked() && (collegeDB.get(i).getEnrollment() < 10000 && collegeDB.get(i).getEnrollment() > 1))
+                                            || (tenTo.isChecked() && (collegeDB.get(i).getEnrollment() < 25000 && collegeDB.get(i).getEnrollment() > 10000))
+                                            || (twentyFiveTo.isChecked() && (collegeDB.get(i).getEnrollment() < 50000 && collegeDB.get(i).getEnrollment() > 25000))
+                                            || (fiftyPlus.isChecked() && collegeDB.get(i).getEnrollment() > 50000)) {
+                                        newColleges.add(collegeDB.get(i));
+                                    }
                                 }
+
+
                             }
 
-                           
 
+                            isTrue = false;
 
 
                         }
 
-
-                        isTrue = false;
-
-
                     }
-
-
                 }
 
             }
