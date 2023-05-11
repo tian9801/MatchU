@@ -279,6 +279,7 @@ public class Swipe extends AppCompatActivity {
 
                     Toast.makeText(Swipe.this, "Direction Right", Toast.LENGTH_SHORT).show();
                     likedList.add(newColleges.get(i));
+                    newColleges.remove(i);
 
                 }
 
@@ -296,6 +297,7 @@ public class Swipe extends AppCompatActivity {
 
 
                     Toast.makeText(Swipe.this, "Direction Left", Toast.LENGTH_SHORT).show();
+                    newColleges.remove(i);
 
 
                 }

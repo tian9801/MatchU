@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,6 +44,14 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         CalendarUtils.selectedDate = LocalDate.now();
         initWidgets();
         setWeekView();
+
+        Button event = findViewById(R.id.newEvent);
+
+        event.setOnClickListener(v -> {
+
+
+        });
+
 
         nav = findViewById(R.id.bottomNavigationView);
         nav.setSelectedItemId(R.id.calender);
