@@ -33,6 +33,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     private ListView eventListView;
 
 
+
     BottomNavigationView nav;
 
 
@@ -44,6 +45,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         CalendarUtils.selectedDate = LocalDate.now();
         initWidgets();
         setWeekView();
+        createNotificationChannel();
 
         Button event = findViewById(R.id.newEvent);
 
@@ -86,6 +88,11 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
             }
 
         });
+    }
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            
+        }
     }
     private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
