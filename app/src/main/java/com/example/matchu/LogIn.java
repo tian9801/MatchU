@@ -179,7 +179,7 @@ public class LogIn extends AppCompatActivity  {
 
                                 Log.d(TAG, userName + " logged in");
 
-                                Intent intent = new Intent(LogIn.this, Questionare.class);
+                                Intent intent = new Intent(LogIn.this, Favorites.class);
                                 startActivity(intent);
                             }
                             else {
