@@ -125,6 +125,7 @@ public class FirebaseHelper {
 
 
     private void addData(College c, FirestoreCallback firestoreCallback) {
+
         db.collection("users").document(uid).collection("likedList")
                 .add(c)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -143,6 +144,7 @@ public class FirebaseHelper {
                         Log.i(TAG, "Error adding document", e);
                     }
                 });
+
     }
 
 
