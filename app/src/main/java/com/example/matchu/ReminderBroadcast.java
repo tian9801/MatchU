@@ -14,7 +14,7 @@ public class ReminderBroadcast extends BroadcastReceiver{
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyMe")
+      /*  NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyMe")
                 .setSmallIcon(R.drawable.steph)
                 .setContentTitle("Event Reminder")
                 .setContentText(EventEditActivity.getEventNameET().getText())
@@ -22,7 +22,7 @@ public class ReminderBroadcast extends BroadcastReceiver{
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
         notificationManagerCompat.notify(200, builder.build());
-
+        */
 
     }
 }

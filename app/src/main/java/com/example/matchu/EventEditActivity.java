@@ -17,7 +17,7 @@ import java.time.LocalTime;
 import java.util.Locale;
 
 public class EventEditActivity extends AppCompatActivity {
-    public static EditText eventNameET;
+    private EditText eventNameET;
     private TextView eventDateTV;
     private EditText eventTimeTV;
     private LocalTime time;
@@ -81,11 +81,5 @@ public class EventEditActivity extends AppCompatActivity {
 
     }
 
-    public static EditText getEventNameET() {
-        return eventNameET;
-    }
 
-    public void setEventNameET(EditText eventNameET) {
-        this.eventNameET = eventNameET;
-    }
 }

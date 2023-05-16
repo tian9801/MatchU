@@ -45,14 +45,14 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         CalendarUtils.selectedDate = LocalDate.now();
         initWidgets();
         setWeekView();
-        createNotificationChannel();
+      //  createNotificationChannel();
 
         Button event = findViewById(R.id.newEvent);
 
-        event.setOnClickListener(v -> {
+       // event.setOnClickListener(v -> {
 
 
-        });
+      //  });
 
 
         nav = findViewById(R.id.bottomNavigationView);
@@ -89,11 +89,11 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
 
         });
     }
-    private void createNotificationChannel(){
+   /* private void createNotificationChannel(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             
         }
-    }
+    }*/
     private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
