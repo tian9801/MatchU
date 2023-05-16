@@ -60,9 +60,9 @@ public class Settings extends AppCompatActivity {
     }
 
     public void logOutClicked(View view) {
-       for(int i = 0; i< Swipe.likedList.size(); i++){
-           LogIn.firebaseHelper.addData(Swipe.likedList.get(i));
-        }
+        //for(int i = 0; i< Swipe.likedList.size(); i++){
+           // LogIn.firebaseHelper.addData(Swipe.likedList.get(i));
+        //}
 
         LogIn.firebaseHelper.logOutUser();
 

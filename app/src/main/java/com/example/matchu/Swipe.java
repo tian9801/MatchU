@@ -278,8 +278,10 @@ public class Swipe extends AppCompatActivity {
 
 
                     Toast.makeText(Swipe.this, "Direction Right", Toast.LENGTH_SHORT).show();
-                    likedList.add(newColleges.get(i));
 
+
+                    //likedList.add(newColleges.get(i));
+                    LogIn.firebaseHelper.addData(newColleges.get(i));
                     newColleges.remove(i);
 
 

@@ -48,8 +48,8 @@ public class CollegeAdapter extends ArrayAdapter<College> {
 
         addHeart.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Swipe.likedList.add(college);
                 Toast.makeText(getContext(), "added to favorites", Toast.LENGTH_SHORT).show();
+                LogIn.firebaseHelper.addData(college);
             }
         });
         return convertView;

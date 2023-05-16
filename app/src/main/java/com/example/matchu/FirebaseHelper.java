@@ -125,6 +125,7 @@ public class FirebaseHelper {
 
 
     private void addData(College c, FirestoreCallback firestoreCallback) {
+     likedList.clear();
 
         db.collection("users").document(uid).collection("likedList")
                 .add(c)
