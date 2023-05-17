@@ -18,7 +18,7 @@
         android:theme="@style/Theme.MatchU"
         tools:targetApi="33">
         <activity
-            android:name=".WeekViewActivity"
+            android:name=".Questionare"
             android:exported="false" />
         <activity
             android:name=".EventEditActivity"
@@ -45,10 +45,10 @@
             android:name=".Swipe"
             android:exported="false" />
         <activity
-            android:name=".Questionare"
+            android:name=".LogIn"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".WeekViewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

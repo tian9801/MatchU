@@ -43,7 +43,7 @@ public class Event implements Parcelable
 
 
 
-    public Event(){
+    public Event(String eventName, LocalDate selectedDate){
         this.docID = "no doc Id";
     }
 

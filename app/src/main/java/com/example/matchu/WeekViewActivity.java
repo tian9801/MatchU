@@ -46,14 +46,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         CalendarUtils.selectedDate = LocalDate.now();
         initWidgets();
         setWeekView();
-      //  createNotificationChannel();
 
-        Button event = findViewById(R.id.newEvent);
-
-       // event.setOnClickListener(v -> {
-
-
-      //  });
 
 
         nav = findViewById(R.id.bottomNavigationView);
