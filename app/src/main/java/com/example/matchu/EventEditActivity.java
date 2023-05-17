@@ -48,13 +48,13 @@ public class EventEditActivity extends AppCompatActivity {
         event.setOnClickListener(v -> {
             Toast.makeText(this,"reminder is set!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(EventEditActivity.this,ReminderBroadcast.class);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(EventEditActivity.this, 0, intent,0);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(EventEditActivity.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
             AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
 
 
             long nooo = (hour*3600000) + (minute*60000 );
-            long twentyFour = 10000;
+            long twentyFour = 86400000;
 
             alarmManager.set(AlarmManager.RTC_WAKEUP,
                     nooo + twentyFour, pendingIntent);

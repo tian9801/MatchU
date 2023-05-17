@@ -80,14 +80,6 @@ public class CalendarUtils {
             days.add(current);
             current = current.plusDays(1);
         }
-
-
-
-
-
-
-
-
         return days;
     }
 

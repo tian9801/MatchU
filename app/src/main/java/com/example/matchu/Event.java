@@ -71,6 +71,13 @@ public class Event implements Parcelable
 
     }
 
+    public Event() {
+
+
+
+
+    }
+
     /**
      * This is what is used when we send the Memory object through an intent
      * It is also a method that is part of the Parceable interface and is needed
