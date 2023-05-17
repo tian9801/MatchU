@@ -72,6 +72,7 @@ public class LogIn extends AppCompatActivity  {
         Log.d(TAG, "inside updateUI: " + firebaseHelper.getmAuth().getUid());
         if (firebaseHelper.getmAuth().getUid() != null) {
             firebaseHelper.attachReadDataToUser();
+            firebaseHelper.attachReadDataToUserEvent();
             Intent intent = new Intent(LogIn.this,Questionare.class);
             startActivity(intent);
         }

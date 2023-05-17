@@ -2,6 +2,7 @@ package com.example.matchu;
 
 import static com.example.matchu.CalendarUtils.daysInMonthArray;
 import static com.example.matchu.CalendarUtils.daysInWeekArray;
+import static com.example.matchu.CalendarUtils.formattedDate;
 import static com.example.matchu.CalendarUtils.monthYearfromDate;
 
 import androidx.annotation.NonNull;
@@ -129,8 +130,10 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
+
     @Override
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void onItemClick(int position, LocalDate date) {
 
         CalendarUtils.selectedDate = date;
@@ -140,14 +143,19 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     }
 
     @Override
+    @RequiresApi(api = Build.VERSION_CODES.O)
     protected void onResume(){
         super.onResume();
         setEventAdapter();
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setEventAdapter() {
-        ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectedDate);
+        ArrayList<Event> dailyEvents = null;
+
+            dailyEvents = Event.eventsForDate(formattedDate(CalendarUtils.selectedDate));
+
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents );
         eventListView.setAdapter(eventAdapter);
     }

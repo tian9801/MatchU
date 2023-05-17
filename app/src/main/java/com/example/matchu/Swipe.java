@@ -157,7 +157,7 @@ public class Swipe extends AppCompatActivity {
                     case R.id.calender:
 
 
-                        startActivity(new Intent(getApplicationContext(), Calendar.class));
+                        startActivity(new Intent(getApplicationContext(), WeekViewActivity.class));
 
 
                         overridePendingTransition(0, 0);

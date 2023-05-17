@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:layout_marginTop = "50dp"
     tools:context=".EventEditActivity">
 
     <TextView
@@ -12,10 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Name:"
-        android:textSize="20sp"
+        android:text="Event Name:"
+        android:textSize="40sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/lightBlue"/>
 
     <EditText
         android:id="@+id/eventNameET"
@@ -23,8 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="20sp"
+        android:textColor = "@color/lightBlue"
         android:ems="10"
         android:inputType="text"/>
+
+
 
     <TextView
         android:id="@+id/eventDateTV"
@@ -33,46 +38,38 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Date"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/lightBlue"/>
 
-    <EditText
-        android:id="@+id/eventTimeTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Time"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:textColor="@color/black"/>
-
-    <Button
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:textColor="@color/darkBlue"
-        android:background="@null"
-        android:textStyle="bold"
-        android:onClick="saveEventAction"
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        />
 
     <Button
         android:id="@+id/timeButton"
+        android:layout_width="200dp"
+        android:layout_height="85dp"
+        android:layout_gravity="center"
+        android:layout_marginTop = "10dp"
         android:onClick="popTimePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Time"
-        android:textSize="30sp"
-        android:width="300dp"
-        android:height="100dp"
+        android:text="Click Here: Select Time "
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:onClick="saveEventAction"
+        android:text="Save"
+        android:textColor="@color/darkGrey"
+        android:textSize="20sp"
+        android:textStyle="bold"
 
+        />
 
 
 </LinearLayout>

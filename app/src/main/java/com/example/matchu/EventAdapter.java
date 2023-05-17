@@ -1,5 +1,7 @@
 package com.example.matchu;
 
+import static com.example.matchu.EventEditActivity.eventTime;
+
 import android.content.Context;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -33,8 +35,11 @@ public class EventAdapter extends ArrayAdapter<Event>
 
         TextView eventCellTV = convertView.findViewById(R.id.eventCellTV);
 
-        String eventTitle = event.getName() +" "+ CalendarUtils.formattedTime(event.getTime());
+        // String eventTitle = String.format(event.getName() + " " + event.getHour() + ":" + event.getMinute());
+        String eventTitle = String.format("%s %02d:%02d", event.getName(), event.getHour(), event.getMinute());
         eventCellTV.setText(eventTitle);
         return convertView;
+
+
     }
 }

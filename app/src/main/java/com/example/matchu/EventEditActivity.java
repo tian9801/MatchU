@@ -17,12 +17,14 @@ import java.time.LocalTime;
 import java.util.Locale;
 
 public class EventEditActivity extends AppCompatActivity {
-    private EditText eventNameET;
+    public static EditText eventNameET;
+
+    public static String eventTime;
     private TextView eventDateTV;
     private EditText eventTimeTV;
-    private LocalTime time;
+    private String time;
     Button timeButton;
-    int hour, minute;
+    private int hour, minute;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -30,9 +32,8 @@ public class EventEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_edit);
         initWidgets();
-        time = LocalTime.now();
+
         eventDateTV.setText("Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
-        eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
         timeButton = findViewById(R.id.timeButton);
     }
 
@@ -40,7 +41,7 @@ public class EventEditActivity extends AppCompatActivity {
     private void initWidgets() {
         eventNameET = findViewById(R.id.eventNameET);
         eventDateTV = findViewById(R.id.eventDateTV);
-        eventTimeTV = findViewById(R.id.eventTimeTV);
+
 
 
 
@@ -51,10 +52,22 @@ public class EventEditActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void saveEventAction(View view){
         String eventName = eventNameET.getText().toString();
-        Event newEvent = new Event(eventName, CalendarUtils.selectedDate, time);
+        Event newEvent = null;
+
+        newEvent = new Event(eventName, CalendarUtils.formattedDate(CalendarUtils.selectedDate));
+        newEvent.setHour(hour);
+        newEvent.setMinute(minute);
+
         Event.eventsList.add(newEvent);
+        LogIn.firebaseHelper.addDataEvent(newEvent);
+
+
+
+
+
         finish();
 
 
@@ -66,9 +79,11 @@ public class EventEditActivity extends AppCompatActivity {
         TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                    hour = selectedHour;
-                    minute = selectedMinute;
-                    timeButton.setText(String.format(Locale.getDefault(),"%02d %02d", hour, minute));
+                hour = selectedHour;
+                minute = selectedMinute;
+                timeButton.setText(String.format(Locale.getDefault(),"%02d %02d", hour, minute));
+
+
 
             }
         };
@@ -79,7 +94,30 @@ public class EventEditActivity extends AppCompatActivity {
 
 
 
+
     }
 
+    public static EditText getEventNameET() {
+        return eventNameET;
+    }
 
+    public void setEventNameET(EditText eventNameET) {
+        this.eventNameET = eventNameET;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
+    }
 }

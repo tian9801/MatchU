@@ -1,39 +1,25 @@
 package com.example.matchu;
-import static androidx.core.content.ContextCompat.startActivity;
 
+import static com.example.matchu.Event.eventsList;
 import static com.example.matchu.Swipe.likedList;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executor;
 
 /**
  * The purpose of this class is to hold ALL the code to communicate with Firebase.  This class
@@ -90,6 +76,23 @@ public class FirebaseHelper {
         }
     }
 
+    public void attachReadDataToUserEvent() {
+        // This is necessary to avoid the issues we ran into with data displaying before it
+        // returned from the asynch method calls
+        if (mAuth.getCurrentUser() != null) {
+            uid = mAuth.getUid();
+            readData(new FirestoreCallback() {
+                @Override
+                public void onCallback(ArrayList<College> eventList) {
+                    Log.d(TAG, "Inside attachReadDataToUser, onCallback " + eventList.toString());
+                }
+            });
+        }
+        else {
+            Log.d(TAG, "No one logged in");
+        }
+    }
+
 
     public void addUserToFirestore(String name, String newUID) {
         // Create a new user with their name
@@ -123,6 +126,20 @@ public class FirebaseHelper {
         });
     }
 
+    public void addDataEvent(Event e) {
+        // add Memory m to the database
+        // this method is overloaded and incorporates the interface to handle the asynch calls
+        addDataEvent(e, new FirestoreCallbackEvent() {
+            @Override
+            public void onCallback(ArrayList<Event> eventList) {
+                Log.i(TAG, "Inside addData, onCallback :" + eventsList.toString());
+            }
+        });
+    }
+
+
+
+
 
     private void addData(College c, FirestoreCallback firestoreCallback) {
      likedList.clear();
@@ -137,6 +154,32 @@ public class FirebaseHelper {
                                 document(documentReference.getId()).update("docID", documentReference.getId());
                         Log.i(TAG, "just added " + c.getCollegeName());
                         readData(firestoreCallback);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.i(TAG, "Error adding document", e);
+                    }
+                });
+
+    }
+
+
+
+    private void addDataEvent(Event e, FirestoreCallbackEvent firestoreCallback) {
+
+
+        db.collection("users").document(uid).collection("eventList")
+                .add(e)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        // This will set the docID key for the Memory that was just added.
+                        db.collection("users").document(uid).collection("eventList").
+                                document(documentReference.getId()).update("docID", documentReference.getId());
+                        Log.i(TAG, "just added " + e.getName());
+                        readDataEvent(firestoreCallback);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -184,9 +227,37 @@ certain things from occurring until after the onSuccess is finished.
     }
 
 
+    private void readDataEvent(FirestoreCallbackEvent firestoreCallback) {
+        if (eventsList != null) {   // empties the AL so that it can get a fresh copy of data
+            db.collection("users").document(uid).collection("eventList")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for (DocumentSnapshot doc : task.getResult()) {
+                                    Event event = doc.toObject(Event.class);
+                                    eventsList.add(event);
+                                }
+
+                                Log.i(TAG, "Success reading data: " + eventsList.toString());
+                                firestoreCallback.onCallback(eventsList);
+                            } else {
+                                Log.d(TAG, "Error getting documents: " + task.getException());
+                            }
+                        }
+                    });
+        }
+    }
+
+
     //https://stackoverflow.com/questions/48499310/how-to-return-a-documentsnapshot-as-a-result-of-a-method/48500679#48500679
     public interface FirestoreCallback {
         void onCallback(ArrayList<College> myList);
+    }
+
+    public interface FirestoreCallbackEvent {
+        void onCallback(ArrayList<Event> myList);
     }
 
 
